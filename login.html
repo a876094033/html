@@ -504,13 +504,13 @@
                 "url": URL + "/auth?username="+username+"&password="+password,
                 "method": "POST",
                 "timeout": 0,
-                "contentType": "application/json",
+                "dateType": "jsonp"
                 "xhrFields" : {
                     withCredentials :true
                 },
                 "crossDomain" : true,
             };
-
+            $.cors(settings)
             $.ajax(settings).done(function (result) {
                 if(result.code == 200) {
                     sessionStorage.setItem("token", result.data.token)
