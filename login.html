@@ -509,7 +509,6 @@
                 },
                 "crossDomain" : true,
             };
-            $.cors(settings)
             $.ajax(settings).done(function (result) {
                 if(result.code == 200) {
                     sessionStorage.setItem("token", result.data.token)
