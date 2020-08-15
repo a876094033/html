@@ -1148,6 +1148,77 @@
             var item = sessionStorage.getItem("token");
 
             var list = {page:1,page_size:12}
+            var settings = {
+                "url": URL + "/borrow?page=1&page_size=12",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Cookie": "__cfduid=df4067a724e18ba1b5ed9cc3ecdfbc7f71597424913"
+                },
+            };
+            $.ajax(settings).done(function (result) {
+                if(result.data) {
+                    var str = "";
+                    $.each(result.data.list,function(i, v){
+                        str += '<div class="swiper-slide" index="5">'+
+                            '<div class="invest-list">'+
+                            '<div class="invest-item" style="cursor: pointer;"'+
+                            'onclick="location.href=&#39;/investment/view.php?id=458&#39;">'+
+                            '<div class="invest-thumb"'+
+                            'style="background: url(https://www.sodit.co.kr/statics/loan/289/289_02.JPG) no-repeat center bottom;">'+
+
+
+                            '</div>'+
+                            '<div class="invest-content">'+
+                            '<label>제331호</label>'+
+                            '<h1>'+v.borrow_name+'</h1>'+
+                            '<ul class="meta-info mb20">'+
+                            ' <li class="profit">'+v.interest_rate+'%</li>'+
+                            ' <li>'+
+                            '</li>';
+                        if(v.term == 1){
+                            str += '<li>'+v.term+'개월</li>';
+                        }else {
+                            str += '<li>'+v.term+'개월</li>';
+                        }
+                        str += ' <li>'+
+                            ' </li>'+
+                            '<li>부동산담보</li>'+
+                            ' </ul>'+
+                            '<div class="row">'+
+                            '<div class="col-xs-6 col-sm-6 col-md-6 inv-info">'+
+                            ' <h3>'+v.amount/10000+'<span>만</span>원</h3>'+
+                            '총 모집금액'+
+                            '</div>'+
+                            '<div class="col-xs-6 col-sm-6 col-md-6 inv-info funding">'+
+                            '<h3>4000<span>만</span>원</h3>'+
+                            ' 투자 모집금액'+
+                            ' </div>'+
+                            ' </div>'+
+                            '<div class="progress-ir prn">'+
+                            '<div class="progress progress-bar-sm">'+
+                            '<div class="progress-bar" role="progressbar" style="width: 100%"'+
+                            ' aria-valuemin="0" aria-valuemax="100"></div>'+
+                            ' </div>'+
+                            ' <div class="inven-left">참여자수: 30명</div>'+
+                            ' <div class="inven-right">100%</div>'+
+                            ' </div>'+
+                            '<ul class="inline li50 pt15">'+
+                            ' <li></li>'+
+                            ' <li class="invest-date">2019.08.21 (수) PM 1시</li>'+
+                            ' </ul>'+
+                            ' <div class="status">'+
+                            ' <div class="no1">부동산담보</div>'+
+                            ' <div class="no2">중도상환완료</div>'+
+                            ' </div>'+
+                            '  </div>'+
+                            '  </div>'+
+                            ' </div>'+
+                            '</div>';
+                    })
+                    $(".draggable").html(str)
+                }
+            });
             //Get borrow list
             $.ajax({
                 //type
@@ -1156,67 +1227,12 @@
                 url : URL + "/borrow",
                 //
                 data : JSON.stringify(list),
+                "headers": {
+                    "Cookie": "__cfduid=df4067a724e18ba1b5ed9cc3ecdfbc7f71597424913"
+                },
                 //success
                 success : function(result) {
-                    var str = "";
-                        $.each(result.data.list,function(i, v){
-                            str += '<div class="swiper-slide" index="5">'+
-                            '<div class="invest-list">'+
-                                '<div class="invest-item" style="cursor: pointer;"'+
-                                    'onclick="location.href=&#39;/investment/view.php?id=458&#39;">'+
-                                    '<div class="invest-thumb"'+
-                                        'style="background: url(https://www.sodit.co.kr/statics/loan/289/289_02.JPG) no-repeat center bottom;">'+
 
-
-                                    '</div>'+
-                                    '<div class="invest-content">'+
-                                        '<label>제331호</label>'+
-                                        '<h1>'+v.borrow_name+'</h1>'+
-                                        '<ul class="meta-info mb20">'+
-                                           ' <li class="profit">'+v.interest_rate+'%</li>'+
-                                           ' <li>'+
-                                            '</li>';
-                                            if(v.term == 1){
-                                                str += '<li>'+v.term+'개월</li>';
-                                            }else {
-                                                str += '<li>'+v.term+'개월</li>';
-                                            }
-                                           str += ' <li>'+
-                                           ' </li>'+
-                                            '<li>부동산담보</li>'+
-                                       ' </ul>'+
-                                        '<div class="row">'+
-                                            '<div class="col-xs-6 col-sm-6 col-md-6 inv-info">'+
-                                               ' <h3>'+v.amount/10000+'<span>만</span>원</h3>'+
-                                                '총 모집금액'+
-                                            '</div>'+
-                                            '<div class="col-xs-6 col-sm-6 col-md-6 inv-info funding">'+
-                                                '<h3>4000<span>만</span>원</h3>'+
-                                               ' 투자 모집금액'+
-                                           ' </div>'+
-                                       ' </div>'+
-                                        '<div class="progress-ir prn">'+
-                                            '<div class="progress progress-bar-sm">'+
-                                               '<div class="progress-bar" role="progressbar" style="width: 100%"'+
-                                                   ' aria-valuemin="0" aria-valuemax="100"></div>'+
-                                           ' </div>'+
-                                           ' <div class="inven-left">참여자수: 30명</div>'+
-                                           ' <div class="inven-right">100%</div>'+
-                                       ' </div>'+
-                                        '<ul class="inline li50 pt15">'+
-                                           ' <li></li>'+
-                                          ' <li class="invest-date">2019.08.21 (수) PM 1시</li>'+
-                                       ' </ul>'+
-                                       ' <div class="status">'+
-                                           ' <div class="no1">부동산담보</div>'+
-                                           ' <div class="no2">중도상환완료</div>'+
-                                       ' </div>'+
-                                  '  </div>'+
-                             '  </div>'+
-                          ' </div>'+
-                        '</div>';
-                        })
-                        $(".draggable").html(str)
                     // console.log(result);
                 },
                 //error

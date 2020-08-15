@@ -714,6 +714,9 @@
             "url": URL + "/api/v1/member?token=" + token,
             "method": "POST",
             "timeout": 0,
+            "headers": {
+                "Cookie": "__cfduid=df4067a724e18ba1b5ed9cc3ecdfbc7f71597424913"
+            },
         };
 
         $.ajax(settings).done(function (result) {
@@ -743,6 +746,9 @@
             "url": URL + "/api/v1/memberinvest?page=1&page_size=3&token=" + token,
             "method": "POST",
             "timeout": 0,
+            "headers": {
+                "Cookie": "__cfduid=df4067a724e18ba1b5ed9cc3ecdfbc7f71597424913"
+            },
         };
 
         $.ajax(settings).done(function (result) {
