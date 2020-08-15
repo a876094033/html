@@ -12,7 +12,7 @@ var borrow_collects = "募集中";
 var borrow_repaying = "还款中";
 var borrow_repay = "已还完";
 var borrow_days = "天";
-var borrow_month = "月";
+var borrow_month = "个月";
 
 $(".logout").click(function(){
     window.sessionStorage.removeItem("token")

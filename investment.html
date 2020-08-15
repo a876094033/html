@@ -355,15 +355,15 @@
                     <div class="col-xs-5 col-sm-6 col-md-6 col-lg-4">
                         <ul class="cate-list hidden-xs">
                             <li class="active"><a
-                                    href="/investment.html?#sortMark">전체(329)</a></li>
-                            <li><a href="/investment.html?sort=done#sortMark">모집중/완료(3)</a>
+                                    href="/investment.html">전체(329)</a></li>
+                            <li><a href="/investment.html?borrow_status=2">모집중/완료(3)</a>
                             </li>
-                            <li><a href="/investment.html?sort=ing#sortMark">이자상환중(1)</a>
+                            <li><a href="/investment.html?borrow_status=3">이자상환중(1)</a>
                             </li>
-                            <li><a href="/investment.html?sort=over#sortMark">연체중(10)</a>
-                            </li>
+<!--                            <li><a href="/investment.html?sort=over#sortMark">연체중(10)</a>-->
+<!--                            </li>-->
                             <li><a
-                                    href="/investment.html?sort=complete#sortMark">상환완료(315)</a>
+                                    href="/investment.html?borrow_status=4">상환완료(315)</a>
                             </li>
                         </ul>
                         <div class="hidden-sm hidden-md hidden-lg">
@@ -687,8 +687,12 @@
             if (!page){
                 page = 1;
             }
+            var borrowStatus = getUrlParam("borrow_status")
+            if (!borrowStatus) {
+                borrowStatus = 0
+            }
             var settings = {
-                "url": URL + "/borrow?page="+page+"&page_size=4",
+                "url": URL + "/borrow?page="+page+"&page_size=4&borrow_status="+borrowStatus,
                 "method": "POST",
                 "timeout": 0,
 
@@ -702,7 +706,7 @@
                             "                            <div class=\"invest-item\" style=\"cursor: pointer;\"\n" +
                             "                                onclick=\"location.href='detail.html?id="+v.id+"'\";\">\n" +
                             "                                <div class=\"invest-thumb\"\n" +
-                            "                                    style=\"background: url(http://localhost/static/loan/289_02.JPG) no-repeat center bottom;\">\n" +
+                            "                                    style=\"background: url("+v.borrow_img+") no-repeat center bottom;\">\n" +
                             "                                    <!-- <div class=\"invest-option\">\n" +
                             "\t\t\t<span>이벤트</span><span>선순위</span>\n" +
                             "\t\t</div> -->\n" +
@@ -716,9 +720,9 @@
                             "                                        <li>\n" +
                             "                                        </li>\n";
                         if(v.term == 1){
-                            str += "<li>"+v.term+"개월</li>\n";
+                            str += "<li>"+v.term+borrow_month+"개월</li>\n";
                         }else {
-                            str += "<li>"+v.term+"개월</li>\n";
+                            str += "<li>"+v.term+borrow_days+"개월</li>\n";
                         }
 
                         str +="                                        <li>\n" +
@@ -731,7 +735,7 @@
                             "                                            총 모집금액\n" +
                             "                                        </div>\n" +
                             "                                        <div class=\"col-xs-6 col-sm-6 col-md-6 inv-info funding\">\n" +
-                            "                                            <h3>4000<span>만</span>원</h3>\n" +
+                            "                                            <h3>"+ v.amount_limit / 10000 + "<span>만</span>원</h3>\n" +
                             "                                            투자 모집금액\n" +
                             "                                        </div>\n" +
                             "                                    </div>\n" +
@@ -740,17 +744,24 @@
                             "                                            <div class=\"progress-bar\" role=\"progressbar\" style=\"width: 100%\"\n" +
                             "                                                aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n" +
                             "                                        </div>\n" +
-                            "                                        <div class=\"inven-left\">참여자수: 30명</div>\n" +
-                            "                                        <div class=\"inven-right\">100%</div>\n" +
+                            "                                        <div class=\"inven-left\">참여자수: "+  v.InvestCount +"명</div>\n" +
+                            "                                        <div class=\"inven-right\">"+ Math.floor(v.amount_limit / v.amount) +"%</div>\n" +
                             "                                    </div>\n" +
                             "                                    <ul class=\"inline li50 pt15\">\n" +
                             "                                        <li></li>\n" +
-                            "                                        <li class=\"invest-date\">2019.08.21 (수) PM 1시</li>\n" +
+                            // "                                        <li class=\"invest-date\">2019.08.21 (수) PM 1시</li>\n" +
                             "                                    </ul>\n" +
                             "                                    <div class=\"status\">\n" +
-                            "                                        <div class=\"no1\">부동산담보</div>\n" +
-                            "                                        <div class=\"no2\">중도상환완료</div>\n" +
-                            "                                    </div>\n" +
+                            "                                        <div class=\"no1\">부동산담보</div>\n" ;
+                        if (v.borrow_status == 2) {
+                            str += ' <div class="no2">' + borrow_collects + '</div>';
+                        } else if (v.borrow_status == 3) {
+                            str += ' <div class="no2">' + borrow_repaying + '</div>';
+                        } else {
+                            str += ' <div class="no2">' + borrow_repay + '</div>';
+                        }
+
+                            str += "                                    </div>\n" +
                             "                                </div>\n" +
                             "                            </div>\n" +
                             "                        </div>\n" +
