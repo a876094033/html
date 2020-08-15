@@ -504,7 +504,9 @@
                 "url": URL + "/auth?username="+username+"&password="+password,
                 "method": "POST",
                 "timeout": 0,
-
+                "xhrFields" : {
+                    withCredentials :true
+                }
             };
 
             $.ajax(settings).done(function (result) {
