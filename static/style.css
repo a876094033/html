@@ -2063,10 +2063,10 @@ ul.navbar-nav > li > a > .badge.badge-primary {
 	z-index: 1100;
 }
 #default-header.navbar .navbar-brand {
-	background-image: url(../images/logo-new.png);
+	background-image: url(logo.png);
 }
 .navbar.active .navbar-brand {
-	background-image: url(../images/logo-new.png) !important;
+	background-image: url(logo.png) !important;
 	background-size: 80px 29px;
 	width:80px;
 	height:29px;
@@ -3197,7 +3197,7 @@ body#login-page .login-header {
 	text-align:center;
 }
 body#login-page .login-header .navbar-brand {
-	background-image: url(../images/logo-white@2x.png);
+	background-image: url(logo.png);
 	float:inherit;
 	margin: 20px auto;
 }
