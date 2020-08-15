@@ -509,6 +509,15 @@
                 },
                 "crossDomain" : true,
             };
+            $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:8090/auth?username="+username+"&password="+password,
+                success: function(data){console.log(data)},
+                dataType: 'json',
+                xhrFields: {
+                    withCredentials: true
+                }
+            });
             $.ajax(settings).done(function (result) {
                 if(result.code == 200) {
                     sessionStorage.setItem("token", result.data.token)
