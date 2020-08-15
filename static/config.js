@@ -1,4 +1,4 @@
-var URL = "http://127.0.0.1:8090";
+var URL = "http://127.0.0.1";
 
 var error_register_email_confirm = "两次输入的邮箱不一致";
 var error_register_password_confirm = "两次输入的密码不一致";

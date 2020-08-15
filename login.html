@@ -500,7 +500,7 @@
             var username = $("#email").val()
             var password = $("#pass").val()
             var settings = {
-                "url": "http://127.0.0.1:8090/auth?username="+username+"&password="+password,
+                "url": URL + "/auth?username="+username+"&password="+password,
                 "method": "POST",
                 "timeout": 0,
                 "dataType" :"json",
@@ -511,7 +511,7 @@
             };
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1:8090/auth?username="+username+"&password="+password,
+                url: URL + "/auth?username="+username+"&password="+password,
                 success: function(data){console.log(data)},
                 dataType: 'json',
                 xhrFields: {
