@@ -506,19 +506,9 @@
                 "dataType" :"json",
                 "xhrFields" : {
                     withCredentials :true,
-                    'Access-Control-Allow-Origin': '*',
                 },
                 "crossDomain" : true,
             };
-            $.ajax({
-                type: "POST",
-                url: URL + "/auth?username="+username+"&password="+password,
-                success: function(data){console.log(data)},
-                dataType: 'json',
-                xhrFields: {
-                    withCredentials: true
-                }
-            });
             $.ajax(settings).done(function (result) {
                 if(result.code == 200) {
                     sessionStorage.setItem("token", result.data.token)
