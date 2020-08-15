@@ -2046,7 +2046,7 @@ ul.navbar-nav > li > a > .badge.badge-primary {
 	transition-delay: 0s;
 }
 #landing-header.navbar .navbar-brand {
-	background-image: url(../images/logo-white@2x.png);
+	background-image: url(logo.png);
 }
 #default-header.navbar {
 	background:#fff;
