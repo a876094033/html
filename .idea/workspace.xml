@@ -21,9 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="64b4f103-95a1-4ec3-ad84-f6bb271283b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investment.html" beforeDir="false" afterPath="$PROJECT_DIR$/investment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypage-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypage-investment.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-investment.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +54,8 @@
       <option name="presentableId" value="Default" />
       <updated>1597058125909</updated>
       <workItem from="1597058126972" duration="44313000" />
-      <workItem from="1597467672629" duration="17886000" />
+      <workItem from="1597467672629" duration="21804000" />
+      <workItem from="1597574654756" duration="8662000" />
     </task>
     <servers />
   </component>
@@ -70,6 +72,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1597487003457">

@@ -293,49 +293,13 @@
 		</div> -->
 
                                         </div>
-                                        <div class="invest-content">
-                                            <label>제331호</label>
-                                            <h1>제331호 경기 용인시 역북동 아파트</h1>
-                                            <ul class="meta-info mb20">
-                                                <li class="profit">12%</li>
-                                                <li>
-                                                </li>
-                                                <li>6개월</li>
-                                                <li>
-                                                </li>
-                                                <li>부동산담보</li>
-                                            </ul>
-                                            <div class="row">
-                                                <div class="col-xs-6 col-sm-6 col-md-6 inv-info">
-                                                    <h3>4000<span>만</span>원</h3>
-                                                    총 모집금액
-                                                </div>
-                                                <div class="col-xs-6 col-sm-6 col-md-6 inv-info funding">
-                                                    <h3>4000<span>만</span>원</h3>
-                                                    투자 모집금액
-                                                </div>
-                                            </div>
-                                            <div class="progress-ir prn">
-                                                <div class="progress progress-bar-sm">
-                                                    <div class="progress-bar" role="progressbar" style="width: 100%"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="inven-left">참여자수: 30명</div>
-                                                <div class="inven-right">100%</div>
-                                            </div>
-                                            <ul class="inline li50 pt15">
-                                                <li></li>
-                                                <li class="invest-date">2019.08.21 (수) PM 1시</li>
-                                            </ul>
-                                            <div class="status">
-                                                <div class="no1">부동산담보</div>
-                                                <div class="no2">중도상환완료</div>
-                                            </div>
+                                        <div id="default" class="invest-content">
+
                                         </div>
                                     </div>
                                     <div class="text-center mt50">
                                         <a class="btn btn-lg btn-outline-white edge"
-                                            href="https://www.sodit.co.kr/investment/view.php?id=458">투자 상세보기</a>
+                                            href="">투자 상세보기</a>
                                     </div>
                                 </div>
                             </div>
@@ -354,17 +318,7 @@
                 <div class="row mh30">
                     <div class="col-xs-5 col-sm-6 col-md-6 col-lg-4">
                         <ul class="cate-list hidden-xs">
-                            <li class="active"><a
-                                    href="/investment.html">전체(329)</a></li>
-                            <li><a href="/investment.html?borrow_status=2">모집중/완료(3)</a>
-                            </li>
-                            <li><a href="/investment.html?borrow_status=3">이자상환중(1)</a>
-                            </li>
-<!--                            <li><a href="/investment.html?sort=over#sortMark">연체중(10)</a>-->
-<!--                            </li>-->
-                            <li><a
-                                    href="/investment.html?borrow_status=4">상환완료(315)</a>
-                            </li>
+
                         </ul>
                         <div class="hidden-sm hidden-md hidden-lg">
                             <div class="btn-group bootstrap-select form-control"><button type="button"
@@ -409,12 +363,12 @@
                         <form name="frmSearch" id="frmSearch" method="get"
                             action="https://www.sodit.co.kr/investment/search.php" autocomplete="off">
                             <div class="input-group">
-                                <input type="search" class="form-control" name="q" placeholder="검색" required="">
-                                <span class="input-group-addon">
-                                    <button type="submit">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
+<!--                                <input type="search" class="form-control" name="q" placeholder="검색" required="">-->
+<!--                                <span class="input-group-addon">-->
+<!--                                    <button type="submit">-->
+<!--                                        <span class="glyphicon glyphicon-search"></span>-->
+<!--                                    </button>-->
+<!--                                </span>-->
                             </div>
                         </form>
                     </div>
@@ -689,7 +643,7 @@
             }
             var borrowStatus = getUrlParam("borrow_status")
             if (!borrowStatus) {
-                borrowStatus = 0
+                borrowStatus = '';
             }
             var settings = {
                 "url": URL + "/borrow?page="+page+"&page_size=4&borrow_status="+borrowStatus,
@@ -699,6 +653,26 @@
             };
             $.ajax(settings).done(function (result) {
                 if(result.code == 200) {
+                    if(borrowStatus == 2) {
+
+                    }else if (borrowStatus == 3) {
+
+                    }else if (borrowStatus == 4){
+
+                    }else {
+
+                    }
+                    var strs = "";
+                    //create link
+                   if(borrowStatus == "") {strs += "<li class=\"active\">\n";}else {strs += "<li>\n";}
+                        strs += "<a href=\"/investment.html\">전체</a></li>\n";
+                    if(borrowStatus == 2) {strs += "<li class=\"active\">\n";}else {strs += "<li>\n";}
+                    strs += "<a href=\"/investment.html?borrow_status=2\">모집중/완료</a></li>\n";
+                    if(borrowStatus == 3) {strs += "<li class=\"active\">\n";}else {strs += "<li>\n";}
+                    strs += "<a href=\"/investment.html?borrow_status=3\">이자상환중</a></li>\n";
+                    if(borrowStatus == 4) {strs += "<li class=\"active\">\n";}else {strs += "<li>\n";}
+                    strs += "<a href=\"/investment.html?borrow_status=4\">상환완료</a></li>";
+                    $(".hidden-xs").html(strs)
                     var str = "";
                     $.each(result.data.list,function(i, v){
                         str += "<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3\">\n" +
@@ -768,6 +742,57 @@
                             "                    </div>";
                     });
                     $("#borrow_page").html(str);
+                    var str2 = "<label>제"+result.data.list[0].id+"호</label>\n" +
+                        "                                            <h1>"+result.data.list[0].borrow_name+"</h1>\n" +
+                        "                                            <ul class=\"meta-info mb20\">\n" +
+                        "                                                <li class=\"profit\">12%</li>\n" +
+                        "                                                <li>\n" +
+                        "                                                </li>\n";
+                    if(result.data.list[0].term == 1){
+                        str2 += "<li>"+result.data.list[0].term+borrow_month+"</li>\n";
+                    }else {
+                        str2 += "<li>"+result.data.list[0].term+borrow_days+"</li>\n";
+                    }
+                        str2+=
+                        "                                                <li>\n" +
+                        "                                                </li>\n" +
+                        "                                                <li>부동산담보</li>\n" +
+                        "                                            </ul>\n" +
+                        "                                            <div class=\"row\">\n" +
+                        "                                                <div class=\"col-xs-6 col-sm-6 col-md-6 inv-info\">\n" +
+                        "                                                    <h3>"+result.data.list[0].amount/10000+"<span>만</span>원</h3>\n" +
+                        "                                                    총 모집금액\n" +
+                        "                                                </div>\n" +
+                        "                                                <div class=\"col-xs-6 col-sm-6 col-md-6 inv-info funding\">\n" +
+                        "                                                    <h3>"+result.data.list[0].amount_limit/10000+"<span>만</span>원</h3>\n" +
+                        "                                                    투자 모집금액\n" +
+                        "                                                </div>\n" +
+                        "                                            </div>\n" +
+                        "                                            <div class=\"progress-ir prn\">\n" +
+                        "                                                <div class=\"progress progress-bar-sm\">\n" +
+                        "                                                    <div class=\"progress-bar\" role=\"progressbar\" style=\"width: "+ Math.floor(result.data.list[0].amount_limit / result.data.list[0].amount) +"%\"\n" +
+                        "                                                        aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n" +
+                        "                                                </div>\n" +
+                        "                                                <div class=\"inven-left\">참여자수: "+  result.data.list[0].InvestCount +"명</div>\n" +
+                        "                                                <div class=\"inven-right\">"+ Math.floor(result.data.list[0].amount_limit / result.data.list[0].amount) +"%</div>\n" +
+                        "                                            </div>\n" +
+                        "                                            <ul class=\"inline li50 pt15\">\n" +
+                        "                                                <li></li>\n" +
+                        // "                                                <li class=\"invest-date\">2019.08.21 (수) PM 1시</li>\n" +
+                        "                                            </ul>\n" +
+                        "                                            <div class=\"status\">\n" +
+                        "                                                <div class=\"no1\">부동산담보</div>\n" ;
+                    if (result.data.list[0].borrow_status == 2) {
+                        str2 += ' <div class="no2">' + borrow_collects + '</div>';
+                    } else if (result.data.list[0].borrow_status == 3) {
+                        str2 += ' <div class="no2">' + borrow_repaying + '</div>';
+                    } else {
+                        str2 += ' <div class="no2">' + borrow_repay + '</div>';
+                    }
+                        // "                                                <div class=\"no2\">중도상환완료</div>\n" +
+                       str2+=  "                                            </div>";
+                    $("#default").html(str2)
+                    $(".edge").attr("href", "detail.html?id="+result.data.list[0].id)
                     var all_page = Math.ceil(result.data.total/4);
                     var page_str = "";
                     if (page > 1) {
@@ -797,6 +822,7 @@
 
                 }
             });
+
             if (window.myfbq) return;
             window.myfbq = (function () {
                 if (arguments.length > 0) {

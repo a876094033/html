@@ -123,9 +123,9 @@
                                         <li><a href="https://www.sodit.co.kr/mypage/balance-list.php">거래내역 조회</a></li>
                                     </ul>
                                 </li> -->
-                                <li><a href="/mypage-loan.html">대출내역</a></li>
+                                <li><a href="/recharge1.html">充值</a></li>
                                 <li><a href="/profile-route.html">회원정보수정</a></li>
-                                <li class="logout"><a href="/">로그아웃</a></li>
+                                <li><a href="https://www.sodit.co.kr/member/logout.php">로그아웃</a></li>
                                 <li><a href="/mypage-dashboard.html#withdrawal"
                                         data-toggle="modal">회원탈퇴</a></li>
                                 <!--li class="notice hidden-xs"><a href="/board/view.php?id=334&tab=&page=1"><img class="img-responsive" src="/assets/images/event-sidebar-friends.png" width="100%" height="auto" /></a></li-->
@@ -199,7 +199,7 @@
           </a>
         </li>
         <li role="presentation" class="dropdown">
-          <!--
+
           <a href="javascript:;" class="dropdown-toggle info-number" title="메시지" data-toggle="dropdown" aria-expanded="false">
             <i class="glyphicon glyphicon-bell"></i>
             <span class="badge bg-blue"></span>
@@ -260,7 +260,6 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <ul class="investment-list">
-
                                 <li class="text-center p20">
                                     <p class="fs70">
                                         <i class="glyphicon glyphicon-search"></i>
@@ -268,6 +267,36 @@
                                 </li>
 
                             </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <table class="table table-hover" style="border-left: 3px solid #5E9AF5">
+                                <thead class="text-left">
+                                    <tr>
+                                        <th class="text-left">产品名称</th>
+                                        <th class="text-left">利率</th>
+                                        <th class="text-left">投资期限</th>
+                                        <th class="text-left">投资金额</th>
+                                        <th class="text-left">下期还款时间</th>
+                                        <th class="text-left">应还总额</th>
+                                        <th class="text-left">待还款期数</th>
+                                        <th class="text-left">剩余应还总额</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>内容1</td>
+                                        <td>内容2</td>
+                                        <td>内容3</td>
+                                        <td>内容4</td>
+                                        <td>内容2</td>
+                                        <td>内容3</td>
+                                        <td>内容4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="text-center">
@@ -423,11 +452,10 @@
             }));
     </script>
     <script type="text/javascript" async="" src="/static/wp_astg_4.0.js"></script>
-    <script src="/static/config.js"></script>
     <!-- // WIDERPLANET  SCRIPT END 2017.10.11 -->
 
     <!-- 페이스북 pixcel -->
-
+    <script type="text/javascript" src="static/config.js"></script>
     <script>
         (function (window, document) {
             var token = sessionStorage.getItem("token")
@@ -435,50 +463,34 @@
                 window.location.href = "/login.html";
             }
             var settings = {
-                "url": URL + "/api/v1/memberinvest?page=1&page_size=3&token=" + token,
+                "url": "/api/v1/memberinvest?page=1&page_size=3&token=" + token,
                 "method": "POST",
                 "timeout": 0,
-
-
             };
-
             $.ajax(settings).done(function (result) {
                 if(result.data) {
                     var str = "";
                     $.each(result.data, function (i, v) {
                         str += "<tr>\n" +
-                            "       <td><div class=\"text-center\">"+(i+1)+"</div></td>\n" +
-                            "       <td><div class=\"text-center\">"+v.BorrowName+"</div></td>\n" +
-                            "       <td><div class=\"text-center\">" +v.InterestRate+"%/"+v.Term;
-                        if(v.TermType == 1) {
+                            "<td>"+v.BorrowName+"</td>\n" +
+                            "<td>"+v.InterestRate+"%</td>\n" +
+                            "<td>"+v.Term;
+                        if (v.TermType == 1) {
                             str += borrow_month;
                         }else {
                             str += borrow_days;
                         }
-
-                        str+="</div></td>\n" +
-                            "       <td><div class=\"text-center\">"+v.InvestAmount+"</div></td>\n" +
-                            "       <td><div class=\"text-center\">-</div></td>\n" +
-                            "       <td><div class=\"text-center\">-</div></td>\n" +
-                            "       <td><div class=\"text-center\">";
-                        if(v.BorrowStatus == 1) {
-                            str += borrow_wait_audit;
-                        }else if(v.BorrowStatus == 2) {
-                            str += borrow_collects;
-                        }else if (v.BorrowStatus == 3) {
-                            str += borrow_repaying;
-                        }else {
-                            str += borrow_repay;
-                        }
-                        str += "</div></td>\n" +
-                            "       <td><div class=\"text-center\">-</div></td>\n" +
-                            "       <td><div class=\"text-center\">-</div></td>\n" +
-                            "   </tr>"
-                    })
-                    $(".investment-list").html(str)
+                        str +="</td>\n" +
+                            "<td>"+v.InvestAmount+"</td>\n" +
+                            "<td>"+v.RepayTime+"</td>\n" +
+                            "<td>"+v.RepayAmount+"</td>\n" +
+                            "<td>"+v.RepayTerm+"</td>\n" +
+                            "<td>"+v.RepayAmountWait+"</td>\n" +
+                            "</tr>"
+                    });
+                    $(".table-hover > tbody").html(str)
                 }
             });
-
             if (window.myfbq) return;
             window.myfbq = (function () {
                 if (arguments.length > 0) {
