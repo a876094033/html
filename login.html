@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0040)https://www.sodit.co.kr/member/login.php -->
+
 <html>
 
 <head>
@@ -312,7 +312,7 @@
                 </ul>
                 -->
                     <p class="mt20 text-center">
-                        <a href="https://www.sodit.co.kr/member/join-apply.php">회원가입하기</a>
+                        <a href="/join.html">회원가입하기</a>
                         |
                         <a href="https://www.sodit.co.kr/member/password-find.php">비밀번호 찾기</a>
                     </p>
@@ -503,15 +503,11 @@
                 "url": URL + "/auth?username="+username+"&password="+password,
                 "method": "POST",
                 "timeout": 0,
-                "dataType" :"json",
-                "xhrFields" : {
-                    withCredentials :true,
-                },
-                "crossDomain" : true,
             };
             $.ajax(settings).done(function (result) {
                 if(result.code == 200) {
                     sessionStorage.setItem("token", result.data.token)
+                    alert(success_login)
                     window.location.href = "/";
                 }else {
                     alert(error_login_password_verify);

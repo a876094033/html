@@ -796,7 +796,7 @@
                     var all_page = Math.ceil(result.data.total/4);
                     var page_str = "";
                     if (page > 1) {
-                        page_str = "<li><a href=\"/investment.html?page="+page-1+"\" class=\"prev\"><i class=\"glyphicon glyphicon-chevron-left\"></i></a>\n" +
+                        page_str = "<li><a href=\"/investment.html?page="+(page-1)+"\" class=\"prev\"><i class=\"glyphicon glyphicon-chevron-left\"></i></a>\n" +
                             "                        </li>\n";
                     }else {
                         page_str = "<li><a href=\"javascript:;\" class=\"prev\"><i class=\"glyphicon glyphicon-chevron-left\"></i></a>\n" +
@@ -809,10 +809,10 @@
                         }else {
                             page_str += "<li>\n";
                         }
-                        page_str +=     "<a href=\"/investment.html?page="+i+"\">1</a></li>\n";
+                        page_str +=     "<a href=\"/investment.html?page="+i+"\">"+i+"</a></li>\n";
                     }
                     if (all_page > page) {
-                        page_str +="                        <li><a href=\"/investment.html?page="+page+1+"&amp;sort=#sortMark\"\n" +
+                        page_str +="                        <li><a href=\"/investment.html?page="+(parseInt(page)+1)+'"'+
                             "                                class=\"next\"><i class=\"glyphicon glyphicon-chevron-right\"></i></a></li>";
                     }else {
                         page_str +="                        <li><a href=\"javascript:;\"\n" +

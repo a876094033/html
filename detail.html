@@ -563,6 +563,9 @@
                 window.location.href = "/mypage-investment.html";
             }else {
                 alert(response.msg)
+                if (response.code == 50002) {
+                    window.location.href = "/recharge1.html";
+                }
             }
         });
     });
