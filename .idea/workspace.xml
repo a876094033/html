@@ -21,10 +21,22 @@
   <component name="ChangeListManager">
     <list default="true" id="64b4f103-95a1-4ec3-ad84-f6bb271283b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/faq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guide-npl.html" beforeDir="false" afterPath="$PROJECT_DIR$/guide-npl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investment.html" beforeDir="false" afterPath="$PROJECT_DIR$/investment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media.html" beforeDir="false" afterPath="$PROJECT_DIR$/media.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mypage-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mypage-investment.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-investment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypage-loan.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-loan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypage-monthly-schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-monthly-schedule.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mypage-reward-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-reward-info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/소딧소개.html" beforeDir="false" afterPath="$PROJECT_DIR$/소딧소개.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/소딧소개.html" beforeDir="false" afterPath="$PROJECT_DIR$/소딧소개.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +67,9 @@
       <updated>1597058125909</updated>
       <workItem from="1597058126972" duration="44313000" />
       <workItem from="1597467672629" duration="21804000" />
-      <workItem from="1597574654756" duration="8662000" />
+      <workItem from="1597574654756" duration="15228000" />
+      <workItem from="1597758743036" duration="717000" />
+      <workItem from="1598073857888" duration="9910000" />
     </task>
     <servers />
   </component>
