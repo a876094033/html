@@ -384,12 +384,12 @@
                                 },
                                 function (data) {
                                     if (data.result == "success") {
-                                        alert("회원 탈퇴되었습니다. 이용해 주셔서 감사합니다.");
+                                        swal("회원 탈퇴되었습니다. 이용해 주셔서 감사합니다.");
                                         location.href = "/member/logout.php";
                                     } else {
                                         var errorArr;
                                         errorArr = data.msg.split(":");
-                                        alert(errorArr[1]);
+                                        swal(errorArr[1]);
                                         if (errorArr[0] != "noTxt")
                                             $("#" + errorArr[0]).focus();
                                     }
@@ -496,7 +496,7 @@
             });
         } else {
             $("#kakao-link-btn").on("click", function () {
-                alert('이 기능은 모바일에서만 사용할 수 있습니다.');
+                swal('이 기능은 모바일에서만 사용할 수 있습니다.');
             });
         }
         //]]>
@@ -514,7 +514,7 @@
             }
         });
         clipboard.on('success', function (e) {
-            alert("복사되었습니다.");
+            swal("복사되었습니다.");
         });
 
         function fnApplyUserCode() {
@@ -527,7 +527,7 @@
                     } else {
                         var error_txt;
                         error_txt = data.msg.split(":");
-                        alert(error_txt[1]);
+                        swal(error_txt[1]);
                         if (error_txt[0] != "no_txt")
                             $("#" + error_txt[0]).focus();
                     }
@@ -590,7 +590,7 @@
                             location.href = o.a_proto + o.param
                         }, 100);
                     } else {
-                        alert('이 기능은 모바일에서만 사용할 수 있습니다.');
+                        swal('이 기능은 모바일에서만 사용할 수 있습니다.');
                     }
                     break;
             }
@@ -604,12 +604,12 @@
                 },
                 function (data) {
                     if (data.result == "success") {
-                        alert(data.msg);
+                        swal(data.msg);
                         location.reload();
                     } else {
                         var errorArr;
                         errorArr = data.msg.split(":");
-                        alert(errorArr[1]);
+                        swal(errorArr[1]);
                         if (errorArr[0] != "noTxt")
                             $("#" + errorArr[0]).focus();
                     }

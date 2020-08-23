@@ -369,12 +369,12 @@
                                 },
                                 function (data) {
                                     if (data.result == "success") {
-                                        alert("회원 탈퇴되었습니다. 이용해 주셔서 감사합니다.");
+                                        swal("회원 탈퇴되었습니다. 이용해 주셔서 감사합니다.");
                                         location.href = "/member/logout.php";
                                     } else {
                                         var errorArr;
                                         errorArr = data.msg.split(":");
-                                        alert(errorArr[1]);
+                                        swal(errorArr[1]);
                                         if (errorArr[0] != "noTxt")
                                             $("#" + errorArr[0]).focus();
                                     }
@@ -391,7 +391,8 @@
     </div>
 
     <!-- jQuery  -->
-    <script type="text/javascript" src="/static/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/static/jquery-1.10.2.min.js"></script><link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">
+    <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script>
     <script type="text/javascript" src="/static/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/static/jquery.easing.min.js"></script>
 
@@ -575,12 +576,12 @@
                     },
                     function (data) {
                         if (data.result == "success") {
-                            alert(data.msg);
+                            swal(data.msg);
                             location.reload();
                         } else {
                             var errorArr;
                             errorArr = data.msg.split(":");
-                            alert(errorArr[1]);
+                            swal(errorArr[1]);
                             if (errorArr[0] != "noTxt")
                                 $("#" + errorArr[0]).focus();
 

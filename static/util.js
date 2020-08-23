@@ -7,7 +7,7 @@
  */
 function validText(input_id, msg) {
     if (!$.trim($("#"+ input_id).val())) {
-        alert(msg);
+        swal(msg);
         $("#"+ input_id).focus();
         return false;
     } else {
@@ -26,7 +26,7 @@ function validCheckboxRadio(input_name, msg) {
     if ($('input[name="'+input_name+'"]').is(':checked')) {
         return true;
     } else {
-        alert(msg);
+        swal(msg);
         return false;
     }
 }
@@ -41,7 +41,7 @@ function validCheckboxRadio(input_name, msg) {
 function validSelect(input_name, msg) {
     sel_val     = $('select[name="'+input_name+'"]').val();
     if (sel_val == "") {
-        alert(msg);
+        swal(msg);
         return false;
     } else {
         return true;
@@ -86,7 +86,7 @@ function isValidate(id, msg, type, min, max) {
     if (pattern.test($('#'+ id).val())) {
         return true;
     } else {
-        alert(msg);
+        swal(msg);
         $('#'+ id).focus();
     }
 }
@@ -105,7 +105,7 @@ function isNum(obj, msg) {
         return true;
     } else {
         if (msg) {
-            alert(msg);
+            swal(msg);
         }
         obj.val(obj.val().replace(pattern, ''));
         return false;
@@ -130,7 +130,7 @@ function commaSplit(x) {
 // 3자리마다 , 자동입력
 function commaInsert(obj) {
     if (!TypeCheck(obj.value , "0123456789,")) {
-        alert('숫자만 입력해 주세요.');
+        swal('숫자만 입력해 주세요.');
         obj.value   = '';
         obj.focus();
         return false;
@@ -163,7 +163,7 @@ function removeComma(x) {
 
 /**
  * 비밀번호 유효성 검증
- * 
+ *
  * @param val
  * @returns
  */
@@ -172,21 +172,21 @@ function fnPassNavi(val){
     var eregix  = /[a-zA-Z]/ig;
     var gregix  = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
     var cregix  = val.length;
-    
+
     $("#pass_nav_n, #pass_nav_e, #pass_nav_g, #pass_nav_c").css("color", "");
-    
+
     if (nregix.test(val)) {
         $("#pass_nav_n").css("text-decoration", "line-through").css("color", "red");
     }
-    
+
     if (eregix.test(val)){
         $("#pass_nav_e").css("text-decoration", "line-through").css("color", "red");
     }
-    
+
     if (gregix.test(val)){
         $("#pass_nav_g").css("text-decoration", "line-through").css("color", "red");
     }
-    
+
     if (cregix >= 8 && cregix <= 20){
         $("#pass_nav_c").css("text-decoration", "line-through").css("color", "red");
     }
@@ -208,35 +208,35 @@ function getRandomInt(min, max) {
 
 /**
  * 핸드폰 인증번호 검증용 아이디 생성
- * 
+ *
  * @returns
  */
 function getAppId() {
-    var d       = new Date();   
+    var d       = new Date();
     var appId   = (d.getFullYear()+"/"+leftpad(d.getMonth()+1)+"/"+leftpad(d.getDate())+"/"+leftpad(d.getHours())+"/"+leftpad(d.getMinutes())+"/"+leftpad(d.getSeconds())).toString();
     return replaceAll(appId,"/","")+getRandomInt(100,999).toString();
 }
 
 /*
  * 핸드폰 인증번호 요청
- * 
+ *
  * @param string url    String field url
  * @param string authId input field authId
  * @param string id     input field id
  * @param string pos    인증 구분(position)
  */
 function fnAuthByPhone(url, authId, id, pos) {
-    
+
     pos         = (typeof pos !== 'undefined')? pos : 'memberAuth';
-    
+
     if (!isValidate(id, "잘못된 휴대폰 전화번호입니다.", "mobile")) {
         return false;
     };
-    
+
     var authIdx = getAppId();
     $("#"+authId).val(authIdx);
     var data    = {mode : "reqApproval", position : pos, authId : authIdx, tphone : $("#"+ id).val()};
-    
+
     $.post(url,
             data,
             function(data) {
@@ -249,7 +249,7 @@ function fnAuthByPhone(url, authId, id, pos) {
 }
 
 /**
- * 소식 받기 
+ * 소식 받기
  * @param phone
  * @returns
  */
@@ -257,12 +257,12 @@ function fnNewsletter(phone) {
     $.post("/ajax/member.ajax.php", {mode : 'newletter', phone : phone},
     function(data) {
         if (data.result == "success") {
-            alert("등록되었습니다.");
+            swal("등록되었습니다.");
 			location.reload(true);
         } else {
             var error_txt;
             error_txt       = data.msg.split(":");
-            alert(error_txt[1]);
+            swal(error_txt[1]);
             if (error_txt[0] != "no_txt")
                 $("#" + error_txt[0]).focus();
         }

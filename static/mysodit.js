@@ -1,8 +1,8 @@
 /**
  * Resize function without multiple trigger
- * 
+ *
  * Usage:
- * $(window).smartresize(function(){  
+ * $(window).smartresize(function(){
  *     // code here
  * });
  */
@@ -16,8 +16,8 @@
             var obj = this, args = arguments;
             function delayed () {
                 if (!execAsap)
-                    func.apply(obj, args); 
-                timeout = null; 
+                    func.apply(obj, args);
+                timeout = null;
             }
 
             if (timeout)
@@ -25,11 +25,11 @@
             else if (execAsap)
                 func.apply(obj, args);
 
-            timeout = setTimeout(delayed, threshold || 100); 
+            timeout = setTimeout(delayed, threshold || 100);
         };
     };
 
-    // smartresize 
+    // smartresize
     jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
 })(jQuery,'smartresize');
@@ -49,8 +49,8 @@ var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
     $NAV_MENU = $('.nav_menu'),
     $FOOTER = $('footer');
 
-	
-	
+
+
 // Sidebar
 function init_sidebar() {
 // TODO: This is some kind of easy fix, maybe we can improve this
@@ -99,10 +99,10 @@ var setContentHeight = function () {
         }
     });
 
-// toggle small or large menu 
+// toggle small or large menu
 $MENU_TOGGLE.on('click', function() {
 		console.log('clicked - menu toggle');
-		
+
 		if ($BODY.hasClass('nav-md')) {
 			$SIDEBAR_MENU.find('li.active ul').hide();
 			$SIDEBAR_MENU.find('li.active').addClass('active-sm').removeClass('active');
@@ -128,7 +128,7 @@ $MENU_TOGGLE.on('click', function() {
 	}).parent().addClass('active');
 
 	// recompute content when resizing
-	$(window).smartresize(function(){  
+	$(window).smartresize(function(){
 		setContentHeight();
 	});
 
@@ -156,15 +156,15 @@ $(document).ready(function() {
         var $BOX_PANEL = $(this).closest('.x_panel'),
             $ICON = $(this).find('i'),
             $BOX_CONTENT = $BOX_PANEL.find('.x_content');
-        
+
         // fix for some div with hardcoded fix class
         if ($BOX_PANEL.attr('style')) {
             $BOX_CONTENT.slideToggle(200, function(){
                 $BOX_PANEL.removeAttr('style');
             });
         } else {
-            $BOX_CONTENT.slideToggle(200); 
-            $BOX_PANEL.css('height', 'auto');  
+            $BOX_CONTENT.slideToggle(200);
+            $BOX_PANEL.css('height', 'auto');
         }
 
         $ICON.toggleClass('fa-chevron-up fa-chevron-down');
@@ -298,7 +298,7 @@ if (typeof NProgress != 'undefined') {
     });
 }
 
-	
+
 	  //hover and retain popover when on popover content
         var originalLeave = $.fn.popover.Constructor.prototype.leave;
         $.fn.popover.Constructor.prototype.leave = function(obj) {
@@ -335,14 +335,14 @@ if (typeof NProgress != 'undefined') {
 	function gd(year, month, day) {
 		return new Date(year, month - 1, day).getTime();
 	}
-	
+
 	/* STARRR */
-			
+
 	function init_starrr() {
-		
+
 		if( typeof (starrr) === 'undefined'){ return; }
 		console.log('init_starrr');
-		
+
 		$(".stars").starrr();
 
 		$('.stars-existing').starrr({
@@ -356,14 +356,14 @@ if (typeof NProgress != 'undefined') {
 		$('.stars-existing').on('starrr:change', function (e, value) {
 		  $('.stars-count-existing').html(value);
 		});
-		
+
 	  };
-	    
+
 	function init_skycons(){
-				
+
 			if( typeof (Skycons) === 'undefined'){ return; }
 			console.log('init_skycons');
-		
+
 			var icons = new Skycons({
 				"color": "#73879C"
 			  }),
@@ -378,17 +378,17 @@ if (typeof NProgress != 'undefined') {
 			  icons.set(list[i], list[i]);
 
 			icons.play();
-	
-	}  
-	   
+
+	}
+
 	function init_gauge() {
-			
+
 		if( typeof (Gauge) === 'undefined'){ return; }
-		
+
 		console.log('init_gauge [' + $('.gauge-chart').length + ']');
-		
+
 		console.log('init_gauge');
-		
+
 
 		  var chart_gauge_settings = {
 		  lines: 12,
@@ -405,53 +405,53 @@ if (typeof NProgress != 'undefined') {
 		  strokeColor: '#F0F3F3',
 		  generateGradient: true
 	  };
-		
-		
-		if ($('#chart_gauge_01').length){ 
-		
+
+
+		if ($('#chart_gauge_01').length){
+
 			var chart_gauge_01_elem = document.getElementById('chart_gauge_01');
 			var chart_gauge_01 = new Gauge(chart_gauge_01_elem).setOptions(chart_gauge_settings);
-			
-		}	
-		
-		
-		if ($('#gauge-text').length){ 
-		
+
+		}
+
+
+		if ($('#gauge-text').length){
+
 			chart_gauge_01.maxValue = 6000;
 			chart_gauge_01.animationSpeed = 32;
 			chart_gauge_01.set(3200);
 			chart_gauge_01.setTextField(document.getElementById("gauge-text"));
-		
+
 		}
-		
+
 		if ($('#chart_gauge_02').length){
-		
+
 			var chart_gauge_02_elem = document.getElementById('chart_gauge_02');
 			var chart_gauge_02 = new Gauge(chart_gauge_02_elem).setOptions(chart_gauge_settings);
-			
+
 		}
-		
-		
+
+
 		if ($('#gauge-text2').length){
-			
+
 			chart_gauge_02.maxValue = 9000;
 			chart_gauge_02.animationSpeed = 32;
 			chart_gauge_02.set(2400);
 			chart_gauge_02.setTextField(document.getElementById("gauge-text2"));
-		
+
 		}
-	
-	
-	}   
-	   	   
+
+
+	}
+
 	/* SPARKLINES */
-			
+
 	function init_sparklines() {
-			
+
 			if(typeof (jQuery.fn.sparkline) === 'undefined'){ return; }
-			console.log('init_sparklines'); 
-			
-			
+			console.log('init_sparklines');
+
+
 			$(".sparkline_one").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 4, 5, 6, 3, 5, 4, 5, 4, 5, 4, 3, 4, 5, 6, 7, 5, 4, 3, 5, 6], {
 				type: 'bar',
 				height: '125',
@@ -462,20 +462,20 @@ if (typeof NProgress != 'undefined') {
 				barSpacing: 2,
 				barColor: '#26B99A'
 			});
-			
-			
+
+
 			$(".sparkline_two").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 7, 5, 4, 3, 5, 6], {
 				type: 'bar',
 				height: '40',
 				barWidth: 9,
 				colorMap: {
-					'7': '#a1a1a1'	
+					'7': '#a1a1a1'
 				},
 				barSpacing: 2,
 				barColor: '#26B99A'
 			});
-			
-			
+
+
 			$(".sparkline_three").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 7, 5, 4, 3, 5, 6], {
 				type: 'line',
 				width: '200',
@@ -486,8 +486,8 @@ if (typeof NProgress != 'undefined') {
 				spotColor: '#26B99A',
 				minSpotColor: '#26B99A'
 			});
-			
-			
+
+
 			$(".sparkline11").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 6, 2, 4, 3, 4, 5, 4, 5, 4, 3], {
 				type: 'bar',
 				height: '40',
@@ -498,8 +498,8 @@ if (typeof NProgress != 'undefined') {
 				barSpacing: 2,
 				barColor: '#26B99A'
 			});
-			
-			
+
+
 			$(".sparkline22").sparkline([2, 4, 3, 4, 7, 5, 4, 3, 5, 6, 2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 6], {
 				type: 'line',
 				height: '40',
@@ -510,8 +510,8 @@ if (typeof NProgress != 'undefined') {
 				spotColor: '#34495E',
 				minSpotColor: '#34495E'
 			});
-	
-	
+
+
 			$(".sparkline_bar").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 4, 5, 6, 3, 5], {
 				type: 'bar',
 				colorMap: {
@@ -519,8 +519,8 @@ if (typeof NProgress != 'undefined') {
 				},
 				barColor: '#26B99A'
 			});
-			
-			
+
+
 			$(".sparkline_area").sparkline([5, 6, 7, 9, 9, 5, 3, 2, 2, 4, 6, 7], {
 				type: 'line',
 				lineColor: '#26B99A',
@@ -533,8 +533,8 @@ if (typeof NProgress != 'undefined') {
 				spotRadius: 2.5,
 				width: 85
 			});
-			
-			
+
+
 			$(".sparkline_line").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 4, 5, 6, 3, 5], {
 				type: 'line',
 				lineColor: '#26B99A',
@@ -543,14 +543,14 @@ if (typeof NProgress != 'undefined') {
 				spotColor: '#34495E',
 				minSpotColor: '#34495E'
 			});
-			
-			
+
+
 			$(".sparkline_pie").sparkline([1, 1, 2, 1], {
 				type: 'pie',
 				sliceColors: ['#26B99A', '#ccc', '#75BCDD', '#D66DE2']
 			});
-			
-			
+
+
 			$(".sparkline_discreet").sparkline([4, 6, 7, 7, 4, 3, 2, 1, 4, 4, 2, 4, 3, 7, 8, 9, 7, 6, 4, 3], {
 				type: 'discrete',
 				barWidth: 3,
@@ -558,17 +558,17 @@ if (typeof NProgress != 'undefined') {
 				width: '85',
 			});
 
-			
-		};   
-	   
-	   
+
+		};
+
+
     /* AUTOCOMPLETE */
-			
+
 	function init_autocomplete() {
-			
+
 			if( typeof (autocomplete) === 'undefined'){ return; }
 			console.log('init_autocomplete');
-			
+
 			var countries = { AD:"Andorra",A2:"Andorra Test",AE:"United Arab Emirates",AF:"Afghanistan",AG:"Antigua and Barbuda",AI:"Anguilla",AL:"Albania",AM:"Armenia",AN:"Netherlands Antilles",AO:"Angola",AQ:"Antarctica",AR:"Argentina",AS:"American Samoa",AT:"Austria",AU:"Australia",AW:"Aruba",AX:"Åland Islands",AZ:"Azerbaijan",BA:"Bosnia and Herzegovina",BB:"Barbados",BD:"Bangladesh",BE:"Belgium",BF:"Burkina Faso",BG:"Bulgaria",BH:"Bahrain",BI:"Burundi",BJ:"Benin",BL:"Saint Barthélemy",BM:"Bermuda",BN:"Brunei",BO:"Bolivia",BQ:"British Antarctic Territory",BR:"Brazil",BS:"Bahamas",BT:"Bhutan",BV:"Bouvet Island",BW:"Botswana",BY:"Belarus",BZ:"Belize",CA:"Canada",CC:"Cocos [Keeling] Islands",CD:"Congo - Kinshasa",CF:"Central African Republic",CG:"Congo - Brazzaville",CH:"Switzerland",CI:"Côte d’Ivoire",CK:"Cook Islands",CL:"Chile",CM:"Cameroon",CN:"China",CO:"Colombia",CR:"Costa Rica",CS:"Serbia and Montenegro",CT:"Canton and Enderbury Islands",CU:"Cuba",CV:"Cape Verde",CX:"Christmas Island",CY:"Cyprus",CZ:"Czech Republic",DD:"East Germany",DE:"Germany",DJ:"Djibouti",DK:"Denmark",DM:"Dominica",DO:"Dominican Republic",DZ:"Algeria",EC:"Ecuador",EE:"Estonia",EG:"Egypt",EH:"Western Sahara",ER:"Eritrea",ES:"Spain",ET:"Ethiopia",FI:"Finland",FJ:"Fiji",FK:"Falkland Islands",FM:"Micronesia",FO:"Faroe Islands",FQ:"French Southern and Antarctic Territories",FR:"France",FX:"Metropolitan France",GA:"Gabon",GB:"United Kingdom",GD:"Grenada",GE:"Georgia",GF:"French Guiana",GG:"Guernsey",GH:"Ghana",GI:"Gibraltar",GL:"Greenland",GM:"Gambia",GN:"Guinea",GP:"Guadeloupe",GQ:"Equatorial Guinea",GR:"Greece",GS:"South Georgia and the South Sandwich Islands",GT:"Guatemala",GU:"Guam",GW:"Guinea-Bissau",GY:"Guyana",HK:"Hong Kong SAR China",HM:"Heard Island and McDonald Islands",HN:"Honduras",HR:"Croatia",HT:"Haiti",HU:"Hungary",ID:"Indonesia",IE:"Ireland",IL:"Israel",IM:"Isle of Man",IN:"India",IO:"British Indian Ocean Territory",IQ:"Iraq",IR:"Iran",IS:"Iceland",IT:"Italy",JE:"Jersey",JM:"Jamaica",JO:"Jordan",JP:"Japan",JT:"Johnston Island",KE:"Kenya",KG:"Kyrgyzstan",KH:"Cambodia",KI:"Kiribati",KM:"Comoros",KN:"Saint Kitts and Nevis",KP:"North Korea",KR:"South Korea",KW:"Kuwait",KY:"Cayman Islands",KZ:"Kazakhstan",LA:"Laos",LB:"Lebanon",LC:"Saint Lucia",LI:"Liechtenstein",LK:"Sri Lanka",LR:"Liberia",LS:"Lesotho",LT:"Lithuania",LU:"Luxembourg",LV:"Latvia",LY:"Libya",MA:"Morocco",MC:"Monaco",MD:"Moldova",ME:"Montenegro",MF:"Saint Martin",MG:"Madagascar",MH:"Marshall Islands",MI:"Midway Islands",MK:"Macedonia",ML:"Mali",MM:"Myanmar [Burma]",MN:"Mongolia",MO:"Macau SAR China",MP:"Northern Mariana Islands",MQ:"Martinique",MR:"Mauritania",MS:"Montserrat",MT:"Malta",MU:"Mauritius",MV:"Maldives",MW:"Malawi",MX:"Mexico",MY:"Malaysia",MZ:"Mozambique",NA:"Namibia",NC:"New Caledonia",NE:"Niger",NF:"Norfolk Island",NG:"Nigeria",NI:"Nicaragua",NL:"Netherlands",NO:"Norway",NP:"Nepal",NQ:"Dronning Maud Land",NR:"Nauru",NT:"Neutral Zone",NU:"Niue",NZ:"New Zealand",OM:"Oman",PA:"Panama",PC:"Pacific Islands Trust Territory",PE:"Peru",PF:"French Polynesia",PG:"Papua New Guinea",PH:"Philippines",PK:"Pakistan",PL:"Poland",PM:"Saint Pierre and Miquelon",PN:"Pitcairn Islands",PR:"Puerto Rico",PS:"Palestinian Territories",PT:"Portugal",PU:"U.S. Miscellaneous Pacific Islands",PW:"Palau",PY:"Paraguay",PZ:"Panama Canal Zone",QA:"Qatar",RE:"Réunion",RO:"Romania",RS:"Serbia",RU:"Russia",RW:"Rwanda",SA:"Saudi Arabia",SB:"Solomon Islands",SC:"Seychelles",SD:"Sudan",SE:"Sweden",SG:"Singapore",SH:"Saint Helena",SI:"Slovenia",SJ:"Svalbard and Jan Mayen",SK:"Slovakia",SL:"Sierra Leone",SM:"San Marino",SN:"Senegal",SO:"Somalia",SR:"Suriname",ST:"São Tomé and Príncipe",SU:"Union of Soviet Socialist Republics",SV:"El Salvador",SY:"Syria",SZ:"Swaziland",TC:"Turks and Caicos Islands",TD:"Chad",TF:"French Southern Territories",TG:"Togo",TH:"Thailand",TJ:"Tajikistan",TK:"Tokelau",TL:"Timor-Leste",TM:"Turkmenistan",TN:"Tunisia",TO:"Tonga",TR:"Turkey",TT:"Trinidad and Tobago",TV:"Tuvalu",TW:"Taiwan",TZ:"Tanzania",UA:"Ukraine",UG:"Uganda",UM:"U.S. Minor Outlying Islands",US:"United States",UY:"Uruguay",UZ:"Uzbekistan",VA:"Vatican City",VC:"Saint Vincent and the Grenadines",VD:"North Vietnam",VE:"Venezuela",VG:"British Virgin Islands",VI:"U.S. Virgin Islands",VN:"Vietnam",VU:"Vanuatu",WF:"Wallis and Futuna",WK:"Wake Island",WS:"Samoa",YD:"People's Democratic Republic of Yemen",YE:"Yemen",YT:"Mayotte",ZA:"South Africa",ZM:"Zambia",ZW:"Zimbabwe",ZZ:"Unknown or Invalid Region" };
 
 			var countriesArray = $.map(countries, function(value, key) {
@@ -582,28 +582,28 @@ if (typeof NProgress != 'undefined') {
 			$('#autocomplete-custom-append').autocomplete({
 			  lookup: countriesArray
 			});
-			
+
 		};
-	   
+
 	/* AUTOSIZE */
-			
+
 	function init_autosize() {
-			
+
 			if(typeof $.fn.autosize !== 'undefined'){
-			
+
 			autosize($('.resizable_textarea'));
-			
+
 			}
-			
-		};  
-	   
+
+		};
+
     /* PARSLEY */
-			
+
 	function init_parsley() {
-			
+
 			if( typeof (parsley) === 'undefined'){ return; }
 			console.log('init_parsley');
-			
+
 			$/*.listen*/('parsley:field:validate', function() {
 			  validateFront();
 			});
@@ -620,7 +620,7 @@ if (typeof NProgress != 'undefined') {
 				$('.bs-callout-warning').removeClass('hidden');
 			  }
 			};
-		  
+
 			$/*.listen*/('parsley:field:validate', function() {
 			  validateFront();
 			});
@@ -637,48 +637,48 @@ if (typeof NProgress != 'undefined') {
 				$('.bs-callout-warning').removeClass('hidden');
 			  }
 			};
-			
+
 			  try {
 				hljs.initHighlightingOnLoad();
 			  } catch (err) {}
-			
+
 		};
-	   
-		
+
+
 		  /* INPUTS */
-		  
+
 			function onAddTag(tag) {
-				alert("Added a tag: " + tag);
+				swal("Added a tag: " + tag);
 			  }
 
 			  function onRemoveTag(tag) {
-				alert("Removed a tag: " + tag);
+				swal("Removed a tag: " + tag);
 			  }
 
 			  function onChangeTag(input, tag) {
-				alert("Changed a tag: " + tag);
+				swal("Changed a tag: " + tag);
 			  }
 
 			  //tags input
 			function init_TagsInput() {
-				  
-				if(typeof $.fn.tagsInput !== 'undefined'){	
-				 
+
+				if(typeof $.fn.tagsInput !== 'undefined'){
+
 				$('#tags_1').tagsInput({
 				  width: 'auto'
 				});
-				
+
 				}
-				
+
 		    };
-	   
+
 		/* SELECT2 */
-	  
+
 		function init_select2() {
-			 
+
 			if( typeof (select2) === 'undefined'){ return; }
 			console.log('init_toolbox');
-			 
+
 			$(".select2_single").select2({
 			  placeholder: "Select a state",
 			  allowClear: true
@@ -689,16 +689,16 @@ if (typeof NProgress != 'undefined') {
 			  placeholder: "With Max Selection limit 4",
 			  allowClear: true
 			});
-			
+
 		};
-	   
+
 	   /* WYSIWYG EDITOR */
 
 		function init_wysiwyg() {
-			
+
 		if( typeof ($.fn.wysiwyg) === 'undefined'){ return; }
-		console.log('init_wysiwyg');	
-			
+		console.log('init_wysiwyg');
+
         function init_ToolbarBootstrapBindings() {
           var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
               'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
@@ -740,7 +740,7 @@ if (typeof NProgress != 'undefined') {
           }
         }
 
-        function showErrorAlert(reason, detail) {
+        function showErrorswal(reason, detail) {
           var msg = '';
           if (reason === 'unsupported-file-type') {
             msg = "Unsupported format " + detail;
@@ -753,27 +753,27 @@ if (typeof NProgress != 'undefined') {
 
        $('.editor-wrapper').each(function(){
 			var id = $(this).attr('id');	//editor-one
-			
+
 			$(this).wysiwyg({
 				toolbarSelector: '[data-target="#' + id + '"]',
 				fileUploadError: showErrorAlert
-			});	
+			});
 		});
- 
-		
+
+
         window.prettyPrint;
         prettyPrint();
-	
+
     };
-	  
+
 	/* CROPPER */
-		
+
 		function init_cropper() {
-			
-			
+
+
 			if( typeof ($.fn.cropper) === 'undefined'){ return; }
 			console.log('init_cropper');
-			
+
 			var $image = $('#image');
 			var $download = $('#download');
 			var $dataX = $('#dataX');
@@ -988,26 +988,26 @@ if (typeof NProgress != 'undefined') {
 					}).cropper('reset').cropper('replace', blobURL);
 					$inputImage.val('');
 				  } else {
-					window.alert('Please choose an image file.');
+					window.swal('Please choose an image file.');
 				  }
 				}
 			  });
 			} else {
 			  $inputImage.prop('disabled', true).parent().addClass('disabled');
 			}
-			
-			
+
+
 		};
-		
-		/* CROPPER --- end */  
-	  
+
+		/* CROPPER --- end */
+
 		/* KNOB */
-	  
+
 		function init_knob() {
-		
+
 				if( typeof ($.fn.knob) === 'undefined'){ return; }
 				console.log('init_knob');
-	
+
 				$(".knob").knob({
 				  change: function(value) {
 					//console.log("change : " + value);
@@ -1058,7 +1058,7 @@ if (typeof NProgress != 'undefined') {
 					  return false;
 					}
 				  }
-				  
+
 				});
 
 				// Example of infinite knob, iPod click wheel
@@ -1104,27 +1104,27 @@ if (typeof NProgress != 'undefined') {
 					v = this.cv;
 				  }
 				});
-				
+
 		};
-	 
+
 		/* INPUT MASK */
-			
+
 		function init_InputMask() {
-			
+
 			if( typeof ($.fn.inputmask) === 'undefined'){ return; }
 			console.log('init_InputMask');
-			
+
 				$(":input").inputmask();
-				
+
 		};
-	  
+
 		/* COLOR PICKER */
-			 
+
 		function init_ColorPicker() {
-			
+
 			if( typeof ($.fn.colorpicker) === 'undefined'){ return; }
 			console.log('init_ColorPicker');
-			
+
 				$('.demo1').colorpicker();
 				$('.demo2').colorpicker();
 
@@ -1138,17 +1138,17 @@ if (typeof NProgress != 'undefined') {
 				});
 
 				$('.demo-auto').colorpicker();
-			
-		}; 
-	   
-	   
+
+		};
+
+
 		/* ION RANGE SLIDER */
-			
+
 		function init_IonRangeSlider() {
-			
+
 			if( typeof ($.fn.ionRangeSlider) === 'undefined'){ return; }
 			console.log('init_IonRangeSlider');
-			
+
 			$("#range_27").ionRangeSlider({
 			  type: "double",
 			  min: 1000000,
@@ -1209,17 +1209,17 @@ if (typeof NProgress != 'undefined') {
 				return m.format("Do MMMM, HH:mm");
 			  }
 			});
-			
+
 		};
-	   
-	   
+
+
 	  /* VALIDATOR */
 
 	  function init_validator () {
-		 
+
 		if( typeof (validator) === 'undefined'){ return; }
-		console.log('init_validator'); 
-	  
+		console.log('init_validator');
+
 	  // initialize the validator function
       validator.message.date = 'not a real date';
 
@@ -1247,22 +1247,22 @@ if (typeof NProgress != 'undefined') {
 
         return false;
 		});
-	  
+
 	  };
-	   
+
 		/* COMPOSE */
-		
+
 		function init_compose() {
-		
+
 			if( typeof ($.fn.slideToggle) === 'undefined'){ return; }
 			console.log('init_compose');
-		
+
 			$('#compose, .compose-close').click(function(){
 				$('.compose').slideToggle();
 			});
-		
+
 		};
-			
+
 	$(document).ready(function() {
 		init_sparklines();
 		init_sidebar();
@@ -1282,5 +1282,5 @@ if (typeof NProgress != 'undefined') {
 		init_compose();
 		init_autosize();
 		init_autocomplete();
-				
-	});	
+
+	});
