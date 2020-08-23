@@ -21,39 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="64b4f103-95a1-4ec3-ad84-f6bb271283b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/article.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bindcard.html" beforeDir="false" afterPath="$PROJECT_DIR$/bindcard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/certify.html" beforeDir="false" afterPath="$PROJECT_DIR$/certify.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consult-investor.html" beforeDir="false" afterPath="$PROJECT_DIR$/consult-investor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/faq.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guide-npl.html" beforeDir="false" afterPath="$PROJECT_DIR$/guide-npl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investment.html" beforeDir="false" afterPath="$PROJECT_DIR$/investment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/investor.html" beforeDir="false" afterPath="$PROJECT_DIR$/investor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/join.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media.html" beforeDir="false" afterPath="$PROJECT_DIR$/media.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mypage-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mypage-investment.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-investment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mypage-loan.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-loan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mypage-monthly-schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-monthly-schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mypage-reward-info.html" beforeDir="false" afterPath="$PROJECT_DIR$/mypage-reward-info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/privacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile-income.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile-income.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile-professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile-professional.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile-route.html" beforeDir="false" afterPath="$PROJECT_DIR$/profile-route.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recharge1.html" beforeDir="false" afterPath="$PROJECT_DIR$/recharge1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recharge2.html" beforeDir="false" afterPath="$PROJECT_DIR$/recharge2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/so.html" beforeDir="false" afterPath="$PROJECT_DIR$/so.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/member.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/member.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/mysodit.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/mysodit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/소딧소개.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +57,7 @@
       <workItem from="1597574654756" duration="15228000" />
       <workItem from="1597758743036" duration="717000" />
       <workItem from="1598073857888" duration="11985000" />
-      <workItem from="1598107735318" duration="5835000" />
+      <workItem from="1598107735318" duration="7055000" />
     </task>
     <servers />
   </component>
