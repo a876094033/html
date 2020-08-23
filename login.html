@@ -487,7 +487,8 @@
 
     <!-- Bootstrap-->
     <script type="text/javascript" src="./static/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">
+    <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script>
     <!-- Sodit Custom JS -->
     <script type="text/javascript" src="./static/sodit.js"></script>
     <script type="text/javascript" src="./static/util.js"></script>
@@ -505,10 +506,10 @@
             $.ajax(settings).done(function (result) {
                 if(result.code == 200) {
                     sessionStorage.setItem("token", result.data.token)
-                    alert(success_login)
+                    swal(success_login)
                     window.location.href = "/";
                 }else {
-                    alert(error_login_password_verify);
+                    swal(error_login_password_verify);
                 }
             });
         }

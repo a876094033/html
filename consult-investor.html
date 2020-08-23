@@ -634,7 +634,8 @@
     <footer class="login-cont">
         Copyright © 2017 SAMSUNG All Rights Reserved.
     </footer> <!-- End Footer -->
-    <script type="text/javascript" src="/static/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/static/jquery-1.10.2.min.js"></script><link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">
+    <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script>
     <script type="text/javascript" src="/static/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/static/jquery.easing.min.js"></script>
 
@@ -822,12 +823,12 @@
             $.post("/ajax/company.ajax.php", $("#frmConsult").serialize(),
                 function (data) {
                     if (data.result == "success") {
-                        alert("정상적으로 신청 되었습니다. 확인 후 연락 드리겠습니다.");
+                        swal("정상적으로 신청 되었습니다. 확인 후 연락 드리겠습니다.");
                         location.reload();
                     } else {
                         var error_txt;
                         error_txt = data.msg.split(":");
-                        alert(error_txt[1]);
+                        swal(error_txt[1]);
                         if (error_txt[0] != "no_txt") $("#" + error_txt[0]).focus();
                     }
                 }, "json");
