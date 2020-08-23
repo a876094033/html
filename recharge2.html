@@ -153,52 +153,53 @@
             <div class="title-border"></div>
         </div>
         <div class="panel">
-            <h3 class="text-center mh20">账户充值</h3>
+            <h3 class="text-center mh20">계정충전</h3>
             <form name="frmJoin" id="frmJoin" method="post" autocomplete="off">
                 <div class="panel mb10" style="line-height: 24px;">
                     <div class="box">
                         <div class="row">
-                            <div class="col-sm-5 text-right">姓名：</div>
+                            <div class="col-sm-5 text-right">성명：</div>
                             <div class="col-sm-7" id="real_name"></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 text-right">账号：</div>
+                            <div class="col-sm-5 text-right">아이디：</div>
                             <div class="col-sm-7" id="username"></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 text-right">银行卡号：</div>
+                            <div class="col-sm-5 text-right">지불계좌번호：</div>
                             <div class="col-sm-7" id="card_number">333333</div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 text-right">充值金额：</div>
-                            <div class="col-sm-7" id="amount">111 元</div>
+                            <div class="col-sm-5 text-right">충전금액：</div>
+                            <div class="col-sm-7" id="amount">111 원</div>
                         </div>
                     </div>
                 </div>
                 <div class="mb30 text-center" style="padding: 0 30px;">
-                    주의:자금의 안전성을 보장하기 위해 윗 부분에 입력 된 계좌번호는 반드시 담보계좌로 입금하는 계좌번호와 일치
+                    주의:자금의 안전성을 보장하기 위해 윗 부분에 입력 된 계좌번호는 반드시   담보계좌로 입금하는 계좌번호와 일치하여야 합니다.그렇지 않은 경우에는 실시간 입금이 되지않을 수 도 있습니다.
+
                 </div>
                 <div class="panel mb10" style="line-height: 24px;">
                     <div class="box">
                         <div class="row">
-                            <div class="col-sm-5 text-right">担保公司：</div>
+                            <div class="col-sm-5 text-right">삼성신탁담보회사：</div>
                             <div class="col-sm-7">xx公司</div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 text-right">担保银行账号：</div>
+                            <div class="col-sm-5 text-right">삼성신탁담보공식계좌：</div>
                             <div class="col-sm-7">123457888</div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5 text-right">存款托管银行：</div>
+                            <div class="col-sm-5 text-right">삼성신탁담보체결은행：</div>
                             <div class="col-sm-7">工商银行</div>
                         </div>
                     </div>
                 </div>
                 <div class="mb20 text-center" style="padding: 0 30px;">
-                    알림:삼성신탁담보를 통해 투자 한 자금은 삼성금융센터에서 리스크파악을 지배할것이며,원금전액담보의 혜택을 받을
+                    알림:삼성신탁담보를 통해 투자 한  자금은 삼성금융센터에서 리스크파악을 지배할것이며,원금전액담보의 혜택을 받을 수 있습니다
                 </div>
                 <div class="btn-group btn-group-justified">
-                    <button type="button" style="width: 100%;" onclick="location.href='/investment.html'" class="btn btn-lg btn-dark edge">立即投资</button>
+                    <button type="button" style="width: 100%;" onclick="location.href='/investment.html'" class="btn btn-lg btn-dark edge">바로투자</button>
                 </div>
             </form>
         </div>
@@ -352,7 +353,7 @@
         var card_number = getUrlParam("card_number");
         $("#card_number").html(card_number)
         var amount = getUrlParam("amount");
-        $("#amount").html(amount)
+        $("#amount").html(amount+"원")
         if (!token) {
             window.location.href = "/login.html";
         }

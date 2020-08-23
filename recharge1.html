@@ -153,33 +153,33 @@
             <div class="title-border"></div>
         </div>
         <div class="panel">
-            <h3 class="text-center mh20">账户充值</h3>
+            <h3 class="text-center mh20">계정충전</h3>
             <form name="frmJoin" method="post" autocomplete="off">
                 <div class="inner-addon">
                     <select class="form-control" id="bank" placeholder="请选择银行">
-                        <option>请选择银行</option>
+                        <option>지불은행</option>
                         <option>工商银行</option>
                         <option>招商银行</option>
                     </select>
                 </div>
                 <div class="inner-addon">
                     <input type="number" id="card_number" class="form-control" maxlength="100"
-                           placeholder="请输入银行卡号" required="" autofocus="">
+                           placeholder="계좌번호" required="" autofocus="">
                 </div>
                 <div class="inner-addon">
                     <input type="number" id="amount" class="form-control" maxlength="100"
-                           placeholder="请输入充值金额" required="" autofocus="">
+                           placeholder="충전금액" required="" autofocus="">
                 </div>
 
                 <div class="row mb10">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="checkbox checkbox-primary">
-                            只有绑定过的银行卡才能用来转账
+                            인증된 은행계정은  투자에서 자금을 인출할 수 있는 계정으로 지정됩니다.（계정변경가능）
                         </div>
                     </div>
                 </div>
                 <div class="btn-group btn-group-justified">
-                    <button type="button" id="card_button" style="width: 100%;" class="btn btn-lg btn-dark edge">确认
+                    <button type="button" id="card_button" style="width: 100%;" class="btn btn-lg btn-dark edge">확인
                     </button>
                 </div>
             </form>
