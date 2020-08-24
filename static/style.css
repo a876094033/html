@@ -2067,13 +2067,13 @@ ul.navbar-nav > li > a > .badge.badge-primary {
 }
 .navbar.active .navbar-brand {
 	background-image: url(logo.png) !important;
-	background-size: 80px 29px;
-	width:80px;
-	height:29px;
-	margin:11px 0 15px;
-	transition: .5s;
-	-webkit-transition:  0.5s;
-	transition-delay: .0s;
+	/*background-size: 80px 29px;*/
+	width:120px;
+	/*height:29px;*/
+	/*margin:11px 0 15px;*/
+	/*transition: .5s;*/
+	/*-webkit-transition:  0.5s;*/
+	/*transition-delay: .0s;*/
 }
 #default-header.navbar ul.navbar-nav {
 	display:inline-block !important;
