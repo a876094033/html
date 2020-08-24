@@ -580,7 +580,7 @@ ul, ol {
 	left:0;
 	top:5px;
 	font-size:1.4em;
-	color:#337ab7;
+	color:#000000;
 }
 .keyword-ul li h4 {
 	margin-bottom:0;
@@ -2662,7 +2662,7 @@ button,
 	color: #fff;
 }
 .btn-dark:hover, .btn-dark:active {
-	background:#203C64;
+	background:#000000;
 	color: #fff;
 }
 .btn-w-150 {
@@ -4301,7 +4301,7 @@ ul.notifications {
 	height: 0;
 	border-style: solid;
 	border-width: 5px 4px 0 0;
-	border-color: #1A59A0 transparent transparent transparent;
+	border-color: #000000 transparent transparent transparent;
 	}
 	.investment-list li.complete .condition:after {
 	border-color: #999 transparent transparent transparent;
