@@ -283,7 +283,7 @@
                             <div class="slick-track"
                                 style="opacity: 1; width: 733px; transform: translate3d(0px, 0px, 0px);">
                                 <div class="invest-list slick-slide slick-active" index="0" style="width: 733px;">
-                                    <div class="invest-item" style="cursor: pointer;"
+                                    <div class="invest-item" id="default-img" style="cursor: pointer;"
                                         >
                                         <div class="invest-thumb"
                                             style="background: url(/statics/loan/289/289_02.JPG) no-repeat center bottom;">
@@ -681,7 +681,7 @@
                             "                            <div class=\"invest-item\" style=\"cursor: pointer;\"\n" +
                             "                                onclick=\"location.href='detail.html?id="+v.id+"'\";\">\n" +
                             "                                <div class=\"invest-thumb\"\n" +
-                            "                                    style=\"background: url("+v.borrow_img+") no-repeat center bottom;\">\n" +
+                            "                                    style=\"background: url("+IMG_URL + v.borrow_img.split(",")[0]+") no-repeat center bottom;\">\n" +
                             "                                    <!-- <div class=\"invest-option\">\n" +
                             "\t\t\t<span>이벤트</span><span>선순위</span>\n" +
                             "\t\t</div> -->\n" +
@@ -793,6 +793,7 @@
                         // "                                                <div class=\"no2\">중도상환완료</div>\n" +
                        str2+=  "                                            </div>";
                     $("#default").html(str2)
+                    $("#default-img").css(style, "background: url("+result.data.list[0].borrow_img.split(",")[0]+" no-repeat center bottom;")
                     $(".edge").attr("href", "detail.html?id="+result.data.list[0].id)
                     var all_page = Math.ceil(result.data.total/4);
                     var page_str = "";
