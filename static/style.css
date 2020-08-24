@@ -2067,7 +2067,7 @@ ul.navbar-nav > li > a > .badge.badge-primary {
 }
 .navbar.active .navbar-brand {
 	background-image: url(logo.png) !important;
-	/*background-size: 80px 29px;*/
+	background-size: 150px auto;
 	width:120px;
 	/*height:29px;*/
 	/*margin:11px 0 15px;*/
