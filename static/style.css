@@ -3061,7 +3061,7 @@ article .post .post-text {
 	line-height:24px;
 }
 .invest-item .invest-content .invest-finish {
-	background:#72AFF3;
+	background:#000000;
 	display:inline;
 	border-radius:10px;
 	padding:0 7px;
@@ -3086,8 +3086,8 @@ article .post .post-text {
 	border-radius: 5px 0 0 5px;
 }
 .invest-item .invest-content .status .no1 {
-	background:#72AFF3;
-	border:1px solid #72AFF3;
+	background:#000000;
+	border:1px solid #000000;
 	color:#fff;
 }
 .invest-item .invest-content .status .no2 {
