@@ -655,7 +655,7 @@
             var borrow_img = result.data.borrow_img.split(",")
             borrow_img.pop();
             $.each(borrow_img, function (k, v){
-                imgs += "<div class=\"swiper-slide\">\n" +
+                imgs += "<div class=\"swiper-slide\" style='width:100%;height: 468px;'>\n" +
                     "    <img src=\""+IMG_URL+v+"\" />\n" +
                 "</div>";
             })
