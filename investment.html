@@ -695,9 +695,9 @@
                             "                                        <li>\n" +
                             "                                        </li>\n";
                         if(v.term == 1){
-                            str += "<li>"+v.term+borrow_month+"개월</li>\n";
+                            str += "<li>"+v.term+borrow_month+"</li>\n";
                         }else {
-                            str += "<li>"+v.term+borrow_days+"개월</li>\n";
+                            str += "<li>"+v.term+borrow_days+"</li>\n";
                         }
 
                         str +="                                        <li>\n" +
@@ -793,7 +793,7 @@
                         // "                                                <div class=\"no2\">중도상환완료</div>\n" +
                        str2+=  "                                            </div>";
                     $("#default").html(str2)
-                    $("#default-img").css(style, "background: url("+result.data.list[0].borrow_img.split(",")[0]+" no-repeat center bottom;")
+                    $("#default-img .invest-thumb").css("style", "background: url("+result.data.list[0].borrow_img.split(",")[0]+" no-repeat center bottom;")
                     $(".edge").attr("href", "detail.html?id="+result.data.list[0].id)
                     var all_page = Math.ceil(result.data.total/4);
                     var page_str = "";

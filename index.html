@@ -766,56 +766,10 @@
 </div>
 <div class="modal fade SAMSUNG-modal" id="push-popup">
     <div class="modal-dialog modal-xs">
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <h4 class="modal-title">문자 알림서비스</h4>-->
-<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                    <span aria-hidden="true">×</span>-->
-<!--                </button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <div class="text-center">-->
-<!--                    <p>신규상품 오픈전 문자로 먼저 알려드립니다.<br></p>-->
-<!--                    <form name="frmNewsletter" id="frmNewsletter" class="form-inline" method="post"-->
-<!--                          autocomplete="off">-->
-<!--                        <input type="hidden" name="mode" value="newsletter">-->
-<!--                        <div class="input-group">-->
-<!--                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="휴대전화번호 입력"-->
-<!--                                   onkeydown="if(event.keyCode == 13) fnNewsletter($(&#39;#phone&#39;).val());">-->
-<!--                            <span class="input-group-btn">-->
-<!--                                    <a href="javascript:;" onclick="fnNewsletter($(&#39;#phone&#39;).val());"-->
-<!--                                       class="btn btn-primary">소식받기</a>-->
-<!--                                </span>-->
-<!--                        </div>-->
-<!--                    </form>-->
 
-<!--                    <div class="mt20">-->
-<!--                        <a href="https://pf.kakao.com/_mxajbM" target="_blank"><img class="img-responsive"-->
-<!--                                                                                    src="./static/group-2@2x.png"-->
-<!--                                                                                    width="278" height="44"></a></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 </div>
-<!-- POPUP -->
-<!--
-<div id="divpop">
-<div class="popup-item">
-    <div class="slick-slide">
-        <a href="/board/view.php?id=500&tab=&schTxt=&page=1">
-            <img style="margin : 0px" src="http://www.SAMSUNG.co.kr/statics/popup/pop1108.jpg" width="450" height="450" class="img-responsive">
-        </a>
-    </div>
-</div>
-<form name="notice_form">
-    <div class="text-right" style="background:#fff;">
-        <input type="checkbox" class=" " name="chkbox" value="checkbox"> 오늘 하루 이 창을 열지 않음
-        <a href="javascript:closeWin();"><strong>[닫기]</strong></a>
-    </div>
-</form>
-</div>
--->
+
 <script type="text/javascript" src="./static/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="./static/jquery-ui.min.js"></script>
 <script type="text/javascript" src="./static/jquery.easing.min.js"></script>
@@ -861,7 +815,7 @@
                         '<div class="invest-item" style="cursor: pointer;"' +
                         'onclick="location.href=\'/detail.html?id='+v.id+'\'">' +
                         '<div class="invest-thumb"' +
-                        'style="background: url(' + v.borrow_img + ') no-repeat center bottom;">' +
+                        'style="background: url(' + IMG_URL + v.borrow_img.split(",")[0] + ') no-repeat center bottom;">' +
 
 
                         '</div>' +

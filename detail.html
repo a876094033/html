@@ -333,15 +333,6 @@
                         <p>실제 담보물 사진</p>
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="https://SAMSUNG FUNDfund-blob.azureedge.net/attachments/SNAZ2ccYbcBwO9ByI1Z6uHGnx6SpXPKU/p1103_main.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://SAMSUNG FUNDfund-blob.azureedge.net/attachments/SNAZ2ccYbcBwO9ByI1Z6uHGnx6SpXPKU/p1103_main.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://SAMSUNG FUNDfund-blob.azureedge.net/attachments/SNAZ2ccYbcBwO9ByI1Z6uHGnx6SpXPKU/p1103_main.jpg" />
-                                </div>
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
@@ -660,6 +651,15 @@
                 "<input placeholder=\"请输入投资金额\" id=\"amount\" style=\"margin-top: 20px;width: 100%;background-color: #ffffff;border: 1px solid rgba(0,0,0,.1);color: #666666;padding: 8px;\" />"+
                 "                    </div>"
             $(".box-right").html(str);
+            var imgs = "";
+            var borrow_img = result.data.borrow_img.split(",")
+            borrow_img.pop();
+            $.each(borrow_img, function (k, v){
+                imgs += "<div class=\"swiper-slide\">\n" +
+                    "    <img src=\""+IMG_URL+v+"\" />\n" +
+                "</div>";
+            })
+            $(".swiper-wrapper").html(imgs)
             // $(".box2 .body").html(result.data.ramerk)
         });
     })
