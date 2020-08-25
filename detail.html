@@ -385,7 +385,7 @@
                     <div class="box box3">
                         <div class="title">상품구조도</div>
                         <div class="body">
-                            <img src="./images/pawn_universal_diagram_2-1.png" />
+
                         </div>
                     </div>
 
@@ -660,6 +660,8 @@
                 "</div>";
             })
             $(".swiper-wrapper").html(imgs)
+            $(".box3 .body").html("<img src=\""+IMG_URL+result.data.borrow_struct_img+"\" />")
+            $(".text-center img").attr("src", IMG_URL+result.data.prove_pdf)
             // $(".box2 .body").html(result.data.ramerk)
         });
     })
