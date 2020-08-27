@@ -1,20 +1,20 @@
-var URL = "http://127.0.0.1:8090";
+var URL = "";
 
-var error_register_email_confirm = "两次输入的邮箱不一致";
-var error_register_password_confirm = "两次输入的密码不一致";
-var error_register_protocol_error = "请先同意注册协议";
+var error_register_email_confirm = "두번입력한 메일이 일치하지 않습니다.";
+var error_register_password_confirm = "두번입력한 비밀번호가 일치하지 않습니다.";
+var error_register_protocol_error = "우선 회원등록규약에  동의하셔야 합니다.";
 
-var error_login_password_verify = "账号或密码不正确";
-var success_invest = "投资成功";
+var error_login_password_verify = "입력하신 아이디 혹은 비밀번호가 정확하지 않습니다.";
+var success_invest = "투자완료";
 
-var success_register = "注册成功";
-var success_login = "登陆成功";
-var borrow_wait_audit = "待审核";
-var borrow_collects = "募集中";
-var borrow_repaying = "还款中";
-var borrow_repay = "已还完";
-var borrow_days = "天";
-var borrow_month = "个月";
+var success_register = "등록완료";
+var success_login = "로그인완료";
+var borrow_wait_audit = "심사대기";
+var borrow_collects = "모집중";
+var borrow_repaying = "상환중";
+var borrow_repay = "상환완료";
+var borrow_days = "일";
+var borrow_month = "개월";
 
 $(".logout").click(function(){
     window.sessionStorage.removeItem("token")

@@ -224,9 +224,9 @@
   </div>
 </div> -->
 <div id="landing-header" class="navbar active">
-    <a class="navbar-brand" href="/">
-        <img style="width: 120px;" src="/images/samsungfund-logo.png" />
-    </a>
+<!--    <a class="navbar-brand" href="/">-->
+<!--        <img style="width: 120px;" src="/images/samsungfund-logo.png" />-->
+<!--    </a>-->
     <input id="burger" type="checkbox">
     <label for="burger">
         <span></span>
@@ -275,7 +275,7 @@
 <div id="default-header" class="navbar active">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img style="width: 120px;" src="/images/samsungfund-logo.png" />
+<!--            <img style="width: 120px;" src="/images/samsungfund-logo.png" />-->
         </a>
         <input id="gnb" type="checkbox">
         <label for="gnb">
@@ -333,15 +333,6 @@
                         <p>실제 담보물 사진</p>
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="https://SAMSUNG FUNDfund-blob.azureedge.net/attachments/SNAZ2ccYbcBwO9ByI1Z6uHGnx6SpXPKU/p1103_main.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://SAMSUNG FUNDfund-blob.azureedge.net/attachments/SNAZ2ccYbcBwO9ByI1Z6uHGnx6SpXPKU/p1103_main.jpg" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://SAMSUNG FUNDfund-blob.azureedge.net/attachments/SNAZ2ccYbcBwO9ByI1Z6uHGnx6SpXPKU/p1103_main.jpg" />
-                                </div>
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
@@ -394,7 +385,7 @@
                     <div class="box box3">
                         <div class="title">상품구조도</div>
                         <div class="body">
-                            <img src="./images/pawn_universal_diagram_2-1.png" />
+
                         </div>
                     </div>
 
@@ -661,6 +652,17 @@
                 "<input placeholder=\"请输入投资金额\" id=\"amount\" style=\"margin-top: 20px;width: 100%;background-color: #ffffff;border: 1px solid rgba(0,0,0,.1);color: #666666;padding: 8px;\" />"+
                 "                    </div>"
             $(".box-right").html(str);
+            var imgs = "";
+            var borrow_img = result.data.borrow_img.split(",")
+            borrow_img.pop();
+            $.each(borrow_img, function (k, v){
+                imgs += "<div class=\"swiper-slide\" style='width:100%;height: 468px;'>\n" +
+                    "    <img src=\""+IMG_URL+v+"\" />\n" +
+                "</div>";
+            })
+            $(".swiper-wrapper").html(imgs)
+            $(".box3 .body").html("<img src=\""+IMG_URL+result.data.borrow_struct_img+"\" width='670px' />")
+            $(".text-center img").attr("src", IMG_URL+result.data.prove_pdf)
             // $(".box2 .body").html(result.data.ramerk)
         });
     })
