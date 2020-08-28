@@ -84,6 +84,9 @@
         }
     </style>
     <style>
+        .table td {
+            border: none !important;
+        }
         .box-right {
             padding: 20px;
         }
@@ -103,9 +106,8 @@
         .box-right .row .p2 {
             height: 18px;
             font-size: 16px;
-            color: #333;
+            color: #000;
             font-weight: 400;
-            opacity: .7;
             margin-bottom: 3px;
         }
         .box-right .row2 {
@@ -143,8 +145,6 @@
             line-height: 1.6em;
         }
     </style>
-
-
     <!-- 홈화면에 추가할 아이콘 -->
     <script src="/static/trk"></script>
     <script src="/static/ckie"></script>
@@ -183,35 +183,6 @@
         })(window, document, '//rum.beusable.net/script/b180305e012145u843/2b56b394e5');
     </script>
     <script src="/static/2b56b394e5" async="" type="text/javascript"></script>
-    <!-- 뷰저블 -->
-    <script type="text/javascript">
-        (function (w, d, a) {
-            w.__beusablerumclient__ = {
-                load: function (src) {
-                    var b = d.createElement("script");
-                    b.src = src;
-                    b.async = true;
-                    b.type = "text/javascript";
-                    d.getElementsByTagName("head")[0].appendChild(b);
-                }
-            };
-            w.__beusablerumclient__.load(a);
-        })(window, document, '//rum.beusable.net/script/b180305e012145u843/71c640b5f4');
-    </script>
-    <script src="/static/71c640b5f4" async="" type="text/javascript"></script>
-    <!-- 구글 애드센스 시작 -->
-    <script async="" src="/static/f(1).txt"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-5124035802884009",
-            enable_page_level_ads: true
-        });
-    </script>
-    <!-- 구글 애드센스 끝 -->
-    <link rel="preload" href="/static/f(2).txt" as="script">
-    <script type="text/javascript" src="/static/f(2).txt"></script>
-    <script src="/static/2b56b394e5(1)" async="" type="text/javascript"></script>
-    <script src="/static/71c640b5f4(1)" async="" type="text/javascript"></script>
 </head>
 
 <body id="default-page" style="">
@@ -272,7 +243,7 @@
         </ul>
     </div>
 </div>
-<div id="default-header" class="navbar active">
+<div id="default-header" class="navbar">
     <div class="container">
         <a class="navbar-brand" href="/">
 <!--            <img style="width: 120px;" src="/images/samsungfund-logo.png" />-->
@@ -345,30 +316,38 @@
                             <table class="table table-striped table-hover">
                                 <tbody>
                                     <tr>
-                                        <td class="text-left" colspan="2">营业地址</td>
-                                        <td class="text-right" colspan="2">北京市哈哈哈哈哈</td>
+                                        <td class="text-left">营业地址</td>
+                                        <td class="text-right">北京市哈哈哈哈哈</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left" width="13%">商家名称</td>
-                                        <td class="text-right border-right" width="37%">hhahahah </td>
-                                        <td class="text-left" width="13%">业务规模</td>
-                                        <td class="text-right" width="37%">哈哈哈哈哈</td>
+                                        <td class="text-left" >商家名称</td>
+                                        <td class="text-right border-right">hhahahah </td>
                                     </tr>
                                     <tr>
                                         <td class="text-left">资金使用</td>
                                         <td class="text-right border-right">完成资金</td>
-                                        <td class="text-left">申请金额</td>
-                                        <td class="text-right">总计哈哈</td>
                                     </tr>
                                     <tr>
                                         <td class="text-left">液晶电视</td>
                                         <td class="text-right border-right">27%</td>
-                                        <td class="text-right">换领排名</td>
-                                        <td class="text-right">11</td>
                                     </tr>
                                     <tr>
                                         <td class="text-left">施工期</td>
                                         <td class="text-right border-right">2020年</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left" >业务规模</td>
+                                        <td class="text-right">哈哈哈哈哈</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">申请金额</td>
+                                        <td class="text-right">总计哈哈</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">换领排名</td>
+                                        <td class="text-right">11</td>
+                                    </tr>
+                                    <tr>
                                         <td class="text-left">公平汇率</td>
                                         <td class="text-right">37.55%</td>
                                     </tr>
@@ -402,42 +381,45 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <div class="box box-right">
-                        <div class="title">1103호: 강원도 인제군 상남면 독립문 후순위</div>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="p1">연이율</div>
-                                <div class="p2">9.72%</div>
+                    <div id="myAffix">
+                        <div class="box box-right">
+                            <div class="title">1103호: 강원도 인제군 상남면 독립문 후순위</div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="p1">연이율</div>
+                                    <div class="p2">9.72%</div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="p1">대출금액</div>
+                                    <div class="p2">1,300 만원</div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="p1">만기</div>
+                                    <div class="p2">9개월</div>
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="p1">대출금액</div>
+                            <div class="row2">
+                                <div class="p1">상환방식</div>
+                                <div class="p2">만기일시상환</div>
+                            </div>
+                            <div class="row2">
+                                <div class="p1">남은 투자모집금액</div>
                                 <div class="p2">1,300 만원</div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="p1">만기</div>
-                                <div class="p2">9개월</div>
-                            </div>
+    
+    
                         </div>
-                        <div class="row2">
-                            <div class="p1">상환방식</div>
-                            <div class="p2">만기일시상환</div>
+                        <div class="box-right-btn">모집 준비중</div>
+    
+                        <div class="box-right-detail">
+                            SAMSUNG FUND는 투자의 원금과 수익을 보장하지 않습니다.
+                            <br/>
+                            아무리 안전한 상품이더라도,
+                            <br/>
+                            현행법상 원금을 보장하는 행위는 불법입니다.
                         </div>
-                        <div class="row2">
-                            <div class="p1">남은 투자모집금액</div>
-                            <div class="p2">1,300 만원</div>
-                        </div>
-
-
                     </div>
-                    <div class="box-right-btn">모집 준비중</div>
-
-                    <div class="box-right-detail">
-                        SAMSUNG FUND는 투자의 원금과 수익을 보장하지 않습니다.
-                        <br/>
-                        아무리 안전한 상품이더라도,
-                        <br/>
-                        현행법상 원금을 보장하는 행위는 불법입니다.
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -580,6 +562,29 @@
 <script type="text/javascript" src="/static/util.js"></script>
 
 <script>
+    var $affix = $('#myAffix');
+    var onScroll = function () {
+        var y = window.scrollY;
+        var height = window.innerHeight;
+        if (height - y < 520) {
+            return;
+        }
+        if (y > 40) {
+            $affix.css({
+                position: 'relative',
+                top: y + 50 + 'px'
+            })
+        } else {
+            $affix.css({
+                position: 'static',
+            })
+        }
+    };
+    $(window).on('scroll', onScroll);
+    setTimeout(function () {
+        onScroll();
+    }, 1000);
+
     $(".box-right-btn").click(function(){
         var borrow_id = getUrlParam("id");
         var amount = $("#amount").val()
@@ -625,7 +630,7 @@
         };
 
         $.ajax(settings).done(function (result) {
-            var str = "<div class=\"box box-right\">\n" +
+            var str = "" +
                 "                        <div class=\"title\">"+result.data.id+"호: "+result.data.borrow_name+"</div>\n" +
                 "                        <div class=\"row\">\n" +
                 "                            <div class=\"col-sm-3\">\n" +
@@ -650,7 +655,7 @@
                 "                            <div class=\"p2\">"+result.data.amount/10000+" 만원</div>\n" +
                 "                        </div>\n" +
                 "<input placeholder=\"请输入投资金额\" id=\"amount\" style=\"margin-top: 20px;width: 100%;background-color: #ffffff;border: 1px solid rgba(0,0,0,.1);color: #666666;padding: 8px;\" />"+
-                "                    </div>"
+                ""
             $(".box-right").html(str);
             var imgs = "";
             var borrow_img = result.data.borrow_img.split(",")

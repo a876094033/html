@@ -228,7 +228,7 @@
         </ul>
     </div>
 </div>
-<div id="default-header" class="navbar active">
+<div id="default-header" class="navbar">
     <div class="container">
         <a class="navbar-brand" href="/">SAMSUNG</a>
         <input id="gnb" type="checkbox">
@@ -280,27 +280,7 @@
         </div>
     </div>
 </div>
-<div class="modal fade SAMSUNG-modal" id="loan-modal">
-    <div class="modal-dialog modal-sm">
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-body">-->
-<!--                <div class="text-center">-->
-<!--                    <h2 class="title-color">삼성 론대부는<br><span class="fs16">고금리 대부업체가 아닙니다.</span></h2>-->
-<!--                    <div class="title-border"></div>-->
-<!--                </div>-->
-<!--                <p class="text-center mt15"> Samsungfund Co., Ltd.대부는 P2P대출 서비스를 위해  Samsungfund Co., Ltd.의 자회사로 설립되었습니다. 이는 국내 현행법상 P2P대출 업무를 위해 대부업-->
-<!--                    등록을 필요로 하며, 아직 P2P대출에 대한 국내 법 제도가 마련되지 않았기에 대부업체를 자회사로 두고 있습니다. 저희 삼성 론은 고금리 대출을 실행하는 대부업체와는 완전히-->
-<!--                    다르며 합리적인 중·저금리의 대출을 통한 투명하고 안전한 P2P금융 기업입니다.</p>-->
-<!--                <div class="text-center">-->
-<!--                    <button type="button" class="btn btn-default" data-dismiss="modal"-->
-<!--                            aria-label="Close">확인-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--                <div class="clearfix"></div>-->
-<!--            </div>-->
-<!--        </div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
-    </div><!-- /.modal-dialog -->
-</div>
+
 <div class="issue-item swiper-container">
     <div class="swiper-wrapper" tabindex="0">
         <div class="swiper-slide slick-cloned" index="-1"
@@ -873,6 +853,7 @@
                         '</div>';
                 })
                 $(".draggable").html(str)
+                console.log(str);
             }
         });
         //Get borrow list

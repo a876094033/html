@@ -1,4 +1,4 @@
-var URL = "";
+var URL = "http://localhost:8090";
 var IMG_URL = "";
 var error_register_email_confirm = "두번입력한 메일이 일치하지 않습니다.";
 var error_register_password_confirm = "두번입력한 비밀번호가 일치하지 않습니다.";
