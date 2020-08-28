@@ -2063,10 +2063,10 @@ ul.navbar-nav > li > a > .badge.badge-primary {
 	z-index: 1100;
 }
 #default-header.navbar .navbar-brand {
-	background-image: url(logo.png);
+	/* background-image: url(logo.png); */
 }
 .navbar.active .navbar-brand {
-	background-image: url(logo.png) !important;
+	/* background-image: url(logo.png) !important; */
 	background-size: 150px auto;
 	width:280px;
 	/*height:29px;*/
