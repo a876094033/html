@@ -315,48 +315,14 @@
 
                             <table class="table table-striped table-hover">
                                 <tbody>
-                                    <tr>
-                                        <td class="text-left">营业地址</td>
-                                        <td class="text-right">北京市哈哈哈哈哈</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left" >商家名称</td>
-                                        <td class="text-right border-right">hhahahah </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">资金使用</td>
-                                        <td class="text-right border-right">完成资金</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">液晶电视</td>
-                                        <td class="text-right border-right">27%</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">施工期</td>
-                                        <td class="text-right border-right">2020年</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left" >业务规模</td>
-                                        <td class="text-right">哈哈哈哈哈</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">申请金额</td>
-                                        <td class="text-right">总计哈哈</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">换领排名</td>
-                                        <td class="text-right">11</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-left">公平汇率</td>
-                                        <td class="text-right">37.55%</td>
-                                    </tr>
+
                                 </tbody>
                             </table>
-                            강원도 인제군 상남면에 위치한 독립문 아파트의 후순위 근저당권에 질권을 설정하여 물권담보를 잡은 투자상품입니다. <link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">
-    <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script>가 파악한 해당 물건의 시세는 5,000만 원 입니다. 제휴 대출회사가 1,300만 원의 후순위 대출을 실행하며, 이후 제휴 대출회사가 소유한 근저당권에 질권을 설정합니다. 본 상품은 앞서 <script type="text/javascript" src="/static/jquery-1.10.2.min.js"></script><link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">
-    <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script><link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">
-    <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script> 215호, 366호, 568호, 846호를 통해 모집된바 있는 상품입니다. 차주의 원금 전액 상환 후, 차주의 재대출 요청이 발생하여 대출을 진행합니다.
+<!--                            강원도 인제군 상남면에 위치한 독립문 아파트의 후순위 근저당권에 질권을 설정하여 물권담보를 잡은 투자상품입니다. -->
+<!--                            <link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">-->
+<!--    <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script>가 파악한 해당 물건의 시세는 5,000만 원 입니다. 제휴 대출회사가 1,300만 원의 후순위 대출을 실행하며, 이후 제휴 대출회사가 소유한 근저당권에 질권을 설정합니다. 본 상품은 앞서 <script type="text/javascript" src="/static/jquery-1.10.2.min.js"></script><link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">-->
+<!--    <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script><link rel="stylesheet" type="text/css" href="https://www.huangwx.cn/css/sweetalert.css">-->
+<!--    <script type="text/javascript" src="https://www.huangwx.cn/js/sweetalert-dev.js"></script> 215호, 366호, 568호, 846호를 통해 모집된바 있는 상품입니다. 차주의 원금 전액 상환 후, 차주의 재대출 요청이 발생하여 대출을 진행합니다.-->
 
                         </div>
                     </div>
@@ -406,11 +372,11 @@
                                 <div class="p1">남은 투자모집금액</div>
                                 <div class="p2">1,300 만원</div>
                             </div>
-    
-    
+
+
                         </div>
                         <div class="box-right-btn">모집 준비중</div>
-    
+
                         <div class="box-right-detail">
                             SAMSUNG FUND는 투자의 원금과 수익을 보장하지 않습니다.
                             <br/>
@@ -419,7 +385,7 @@
                             현행법상 원금을 보장하는 행위는 불법입니다.
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -668,9 +634,57 @@
             $(".swiper-wrapper").html(imgs)
             $(".box3 .body").html("<img src=\""+IMG_URL+result.data.borrow_struct_img+"\" width='670px' />")
             $(".text-center img").attr("src", IMG_URL+result.data.prove_pdf)
+
             // $(".box2 .body").html(result.data.ramerk)
         });
+        var infosetting = {
+            "url": URL + "/api/v1/getborrowsummary?borrow_id="+borrow_id,
+            "method": "POST",
+            "timeout": 0,
+        };
+        $.ajax(infosetting).done(function (result) {
+            res = result.data;
+            var table_str = "<tr>\n" +
+                "                                        <td class=\"text-left\">营业地址</td>\n" +
+                "                                        <td class=\"text-right\">"+res.address+"</td>\n" +
+                "                                    </tr>\n" +
+                "                                    <tr>\n" +
+                "                                        <td class=\"text-left\" >商家名称</td>\n" +
+                "                                        <td class=\"text-right border-right\">"+res.merchant_name+" </td>\n" +
+                "                                    </tr>\n" +
+                "                                    <tr>\n" +
+                "                                        <td class=\"text-left\">资金使用</td>\n" +
+                "                                        <td class=\"text-right border-right\">"+res.fund_apply+"</td>\n" +
+                "                                    </tr>\n" +
+                "                                    <tr>\n" +
+                "                                        <td class=\"text-left\">液晶电视</td>\n" +
+                "                                        <td class=\"text-right border-right\">"+res.lcd+"%</td>\n" +
+                "                                    </tr>\n" +
+                "                                    <tr>\n" +
+                "                                        <td class=\"text-left\">施工期</td>\n" +
+                "                                        <td class=\"text-right border-right\">"+res.construction_period+"</td>\n" +
+                "                                    </tr>\n" +
+                "                                    <tr>\n" +
+                "                                        <td class=\"text-left\" >业务规模</td>\n" +
+                "                                        <td class=\"text-right\">"+res.business_scale+"</td>\n" +
+                "                                    </tr>\n" +
+                "                                    <tr>\n" +
+                "                                        <td class=\"text-left\">申请金额</td>\n" +
+                "                                        <td class=\"text-right\">"+res.application_amount+"</td>\n" +
+                "                                    </tr>\n" +
+                "                                    <tr>\n" +
+                "                                        <td class=\"text-left\">换领排名</td>\n" +
+                "                                        <td class=\"text-right\">"+res.redeem_ranking+"</td>\n" +
+                "                                    </tr>\n" +
+                "                                    <tr>\n" +
+                "                                        <td class=\"text-left\">公平汇率</td>\n" +
+                "                                        <td class=\"text-right\">"+res.exchange_rate+"%</td>\n" +
+                "                                    </tr>";
+            $(".table-hover >tbody").html(table_str);
+            $(".table-hover").after(res.remark);
+        });
     })
+
     var mySwiper = new Swiper('.swiper-container', {
         // direction: 'vertical', // 垂直切换选项
         loop: true, // 循环模式选项
