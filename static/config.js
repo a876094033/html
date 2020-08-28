@@ -1,5 +1,5 @@
 var URL = "";
-
+var IMG_URL = "";
 var error_register_email_confirm = "두번입력한 메일이 일치하지 않습니다.";
 var error_register_password_confirm = "두번입력한 비밀번호가 일치하지 않습니다.";
 var error_register_protocol_error = "우선 회원등록규약에  동의하셔야 합니다.";
