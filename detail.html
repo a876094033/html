@@ -608,9 +608,14 @@
                 "                                <div class=\"p2\">"+result.data.amount/10000+" 만원</div>\n" +
                 "                            </div>\n" +
                 "                            <div class=\"col-sm-3\">\n" +
-                "                                <div class=\"p1\">만기</div>\n" +
-                "                                <div class=\"p2\">"+result.data.term+"개월</div>\n" +
-                "                            </div>\n" +
+                "                                <div class=\"p1\">만기</div>\n";
+            if (result.data.term_type == 1) {
+                str += "                                <div class=\"p2\">"+result.data.term+"개월</div>\n";
+            }else {
+                str += "                                <div class=\"p2\">"+result.data.term+"일</div>\n";
+            }
+
+                str +="                            </div>\n" +
                 "                        </div>\n" +
                 "                        <div class=\"row2\">\n" +
                 "                            <div class=\"p1\">상환방식</div>\n" +

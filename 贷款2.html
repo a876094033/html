@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="./js/swiper.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.2.js"></script>
+<link rel="stylesheet" href="css/swiper.min.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body class="loan2">
+<div class="header transition" id="header">
+	<div class="warp flex flex-pack-justify">
+		<h1><a href="" class="di_bl"></a></h1>
+		<div class="nav-box flex flex-pack-justify flex-align-center">
+			<ul class="nav flex-1 flex">
+				<li class="m p_r">
+					<h3><a href="">투자하기</a></h3>
+						<ul class="sub">
+							<li><a href="#" class="di_bl">투자하기</a></li>
+							<li><a href="#" class="di_bl">투자하기</a></li>
+						</ul>
+				</li>
+				<li class="m p_r">
+					<h3><a href="">대출신청</a></h3>
+				</li>
+				<li class="m p_r">
+					<h3><a href="">SAMSUNG FUND</a></h3>
+				</li>
+				<li class="m p_r">
+					<h3><a href="">이용안내</a></h3>
+				</li>
+				<li class="m p_r">
+					<h3><a href="">회사소개</a></h3>
+				</li>
+				<li class="m p_r">
+					<h3><a href="">로그인</a></h3>
+				</li>
+				<li class="m p_r">
+					<h3><a href="">회원가입</a></h3>
+				</li>
+			</ul>
+			<a href="" class="login">로그인</a>
+			<a href="" class="reg">회원가입</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	jQuery(".nav").slide({ type:"menu",  titCell:".m", targetCell:".sub", effect:"slideDown", delayTime:300, triggerTime:100,returnDefault:true  });
+</script>
+<div class="banner flex flex-align-center flex-pack-center flex-column" style="background-image:url(img/loan2.jpg)";>
+	<h3>새로워진 렌딩 서비스</h3>
+	<h2>시세가 오르면 렌딩도</h2>
+	<h2>투자가 되는 상승장 렌딩</h2>
+	<div class="flex flex-pack-justify group">
+		<div class="">
+			<h4>이용수수료</h4>
+			<p>일 0.05<span>%</span></p>
+		</div>
+		<div class="">
+			<h4>최대 한도</h4>
+			<p>1억<span>원 상당</span></p>
+		</div>
+		<div class="">
+			<h4>기간</h4>
+			<p>7~50<span>일</span></p>
+		</div>
+	</div>
+	<div class="submit">
+		<a href="" class="di_in t_c">이용내역</a><a href="" class="di_in t_c">서비스 신청</a>
+	</div>
+</div>
+
+<div class="content text-box flex flex-pack-justify">
+	<div class="flex-1">
+		<h2>상승장 렌딩이란?</h2>
+		<p>
+			가상자산을 담보로 가상자산을 빌려 상승장일 때<br>빌릴 때의 KRW 가치만큼만 가상자산을 상환하는 서비스입니다.<br>자산의 가치가 상승하면 상승한 차액만큼 수익을 얻을 수 있습니다.
+		</p>
+	</div>
+	<div class="pic">
+		<img src="img/img7.jpg" >
+	</div>
+</div>
+
+<div class="search-box">
+	<div class="content">
+		<h2 class="t_c">렌딩을 하려면 보증금은 얼마나 필요할까요?</h2>
+		<h5 class="t_c">빌리고 싶은 가상자산의 수량과 렌딩 비율을 설정하세요.</h5>
+		<div class="con flex">
+			<div class="">
+				<h4>빌리고 싶은 수량</h4>
+				<div class="search ">
+					
+					<div class="filter-box fl">
+						<div class="filter-text">
+							<input class="filter-title" type="text" readonly placeholder="pleace select" />
+							<i class="icon icon-filter-arrow"></i>
+						</div>
+						<select name="filter">
+							<option value="BTC">BTC</option>
+							<option value="ETH" selected>ETH</option>							
+						</select>
+					</div>
+					
+					<div class="flex-1 input">
+						<input type="text" id="" value="" placeholder="0 ETH" class=""/>
+					</div>
+					
+				</div>
+			</div>
+			<div class="">
+				<h4>렌딩 비율</h4>
+				<div class="search">
+					<div class="filter-box1">
+						<div class="filter-text">
+							<input class="filter-title" type="text" readonly placeholder="pleace select" />
+							<i class="icon icon-filter-arrow"></i>
+						</div>
+						<select name="filter">
+							<option value="80">80%</option>
+							<option value="70">70%</option>
+							<option value="60" selected>60%</option>
+							<option value="50">50%</option>
+							<option value="40">40%</option>
+							<option value="30">30%</option>
+							<option value="20">20%</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="">
+				<h4>필요한 보증금</h4>
+				<div class="txt">
+					0.00 <span>ETH</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="content chart">
+	<div class="title t_c mt-70">
+		상승장 렌딩으로 수익내는 방법!
+	</div>
+	<div class="pic t_c">
+		<img src="img/img8.jpg" >
+	</div>
+</div>
+
+<div class="pk">
+	<div class="content flex">
+		<div class="pic">
+			<img src="img/img9.png" >
+		</div>
+		<div class="flex-1">
+			<h2>비트코인, 이더리움을 <br>0.05% 수수료로 저렴하게</h2>
+			<p>보유한 가상자산을 담보로 빠르게 렌딩 신청해보세요. <br>지금도 가격은 올라가고 있습니다.</p>
+		</div>
+	</div>
+</div>
+
+<div class="step content">
+	<h2 class="t_c">복잡한 절차없이 원클릭으로 바로바로 신청</h2>
+	<p class="t_c">보유한 자산이 있는 본인인증 완료 회원이면, 빠르게 렌딩 신청이 가능합니다.</p>
+	<div class="flex flex-pack-justify con">
+		<div class="flex flex-align-center p_r">
+			<img src="img/img10.png" >
+			<div class="txt flex flex-column">
+				<span class="c666">Step 01 </span>
+				<div class="">
+					로그인
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-align-center p_r">
+			<img src="img/img11.png" >
+			<div class="txt flex flex-column">
+				<span class="c666">Step 02 </span>
+				<div class="">
+					렌딩 신청
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-align-center p_r">
+			<img src="img/img12.png" >
+			<div class="txt flex flex-column">
+				<span class="c666">Step 03 </span>
+				<div class="">
+					렌딩 완료
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="question">
+	<div class="content">
+		<h4>자주 하는 질문</h4>
+		<ul class="expmenu">
+			
+			<li>
+				<div class="tit flex flex-pack-justify flex-align-center">
+					<span class="label">상승장 렌딩을 신청하려면 자격 조건이 있습니까?</span>
+					<span class="arrow down"></span>
+				</div>
+				<ul class="info">
+					<li>본인인증 완료회원은 누구나 렌딩을 신청할 수 있습니다. (단, 미성년자는 불가합니다.)</li>
+				</ul>
+			</li>
+			<li>
+				<div class="tit flex flex-pack-justify flex-align-center">
+					<span class="label">상승장 렌딩에서 빌릴 수 있는 가상자산은 무엇입니까?</span>
+					<span class="arrow down"></span>
+				</div>
+				<ul class="info">
+					<li>
+						비트코인과 이더리움 신청이 가능합니다.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="tit flex flex-pack-justify flex-align-center">
+					<span class="label">원화 입금 후 비트코인 이나 이더리움 구매 시 구매 한 비트코인과 이더리움으로 렌딩을 신청할 수 있습니까?</span>
+					<span class="arrow down"></span>
+				</div>
+				<ul class="info">
+					<li>
+						24시간 이내 입금된 원화 가치 만큼 렌딩 서비스를 이용이 제한됩니다. 사용이 제한된 금액은 총 자산에서 원화 입금 금액만큼 차감되어 노출되고 입금 시점으로부터 24시간 경과 후에는 제한없이 렌딩 서비스를 이용하실 수 있습니다.<br><br>보증금 증액으로 사용하시는 경우 24시간 제약없이 언제든 사용이 가능합니다.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="tit flex flex-pack-justify flex-align-center">
+					<span class="label">만기 시 렌딩 신청 수량은 어떻게 상환합니까?</span>
+					<span class="arrow down"></span>
+				</div>
+				<ul class="info">
+					<li>
+						신청 만기일이 지나면 00시에 자동상환 됩니다. 상환 수량은 만기 상환 금액을 상환시점의 시세로 계산하여 상환합니다. 보유하신 자산이 없는 경우 보증금에서 차감되며 보증금 차감 시 추가수수료가 발생합니다.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="tit flex flex-pack-justify flex-align-center">
+					<span class="label">상승장 렌딩 서비스 이용 시 이용수수료는 어떻게 계산됩니까?</span>
+					<span class="arrow down"></span>
+				</div>
+				<ul class="info">
+					<li>
+						이용수수료는 렌딩 신청한 날부터 지정된 이용수수료율로 매일 계산되며, 렌딩 이용 기간이기본일수 미만인 경우 기본일 수로 계산됩니다.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="tit flex flex-pack-justify flex-align-center">
+					<span class="label">중도 상환 할 수 있습니까?</span>
+					<span class="arrow down"></span>
+				</div>
+				<ul class="info">
+					<li>
+						언제든 상환이 가능하며, 이용수수료는 이용한 일수만큼 계산됩니다.<br>단, 기본일수 보다 이용일이 적은 경우 이용수수료는 기본일수로 계산됩니다.<br>중도상환 시 사용가능 가상자산이 부족하여 보증금이 차감되는 경우 추가수수료가 발생합니다.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="tit flex flex-pack-justify flex-align-center">
+					<span class="label">렌딩 비율은 무엇입니까?</span>
+					<span class="arrow down"></span>
+				</div>
+				<ul class="info">
+					<li>
+						렌딩 비율이란 보증금 대비 렌딩 받은 금액에 대한 가치입니다. 시세 하락으로 보증금 가치가 내려가면 렌딩 비율을 올라갑니다.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="tit flex flex-pack-justify flex-align-center">
+					<span class="label">렌딩 비율이 높아지면 어떻게 됩니까?</span>
+					<span class="arrow down"></span>
+				</div>
+				<ul class="info">
+					<li>
+						렌딩 비율이 84% 이상이 되면 보증금을 추가하도록 안내 드립니다. 88% 이상이 되면 자동상환이 임박했음을 안내를 드리고, 렌딩 비율이 92% 이상이 되면 만기일에 상관 없이 자동으로 상환됩니다.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="tit flex flex-pack-justify flex-align-center">
+					<span class="label">보증금 증액은 어디서 진행할 수 있습니까?</span>
+					<span class="arrow down"></span>
+				</div>
+				<ul class="info">
+					<li>
+						상승장 렌딩 이용내역 페이지에 손쉽게 보증금을 증액하실 수 있습니다.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="tit flex flex-pack-justify flex-align-center">
+					<span class="label">렌딩 받은 내역은 어디서 확인할 수 있나요?</span>
+					<span class="arrow down"></span>
+				</div>
+				<ul class="info">
+					<li>
+						렌딩 신청후 빗썸 홈페이지 상단 " 렌딩 > 상승장 렌딩 > 이용내역"에서 확인하실 수 있습니다.
+					</li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+
+<div class="content txt-box">
+	<h3 class="mt-70 fB">
+		서비스 안내
+	</h3>
+	<h4>가입대상</h4>
+	<p class="c666">회원 레벨 2단계 이상의 빗썸 가입자 (미성년자 이용 불가)</p>
+	<h4>신청한도</h4>
+	<p class="c666">최소 10만원, 최대 1억원</p>
+	<h4>렌딩비율</h4>
+	<p class="c666">최대 80%까지 가능</p>
+	<h4>렌딩기간</h4>
+	<p class="c666">7일, 15일, 30일, 50일 중 1개 선택</p>
+	<p>※ 최소 이용일 : 7일</p>
+	<h4>신청방법</h4>
+	<p class="c666">가상자산을 담보로 동일한 가상자산을 최대 80%까지 렌딩 신청 가능</p>
+	<h4>알림발송</h4>
+	<p class="c666">
+		렌딩 비율이 일정 비율에 도달 시 다음과 같이 1일 1회 알림 발송 <br>렌딩 비율이 84% 도달 시 보증금 증액 필요 안내<br>렌딩 비율이 88% 도달 시 자동상환 예정 고지<br>렌딩 비율이 92% 도달 시 자동상환 완료 안내
+	</p>
+	<h4>상환방법</h4>
+	<p class="c666">렌딩 지급 시점의 KRW 가치 만큼의 가상자산(이용수수료 포함)을 상환 시점에 상환</p>
+	<h4>중도상환</h4>
+	<p class="c666">
+		가능, 중도상환 수수료 없으나 사용가능 가상자산이 부족하여 보증금이 차감되는 경우 추가수수료 0.1% 발생<br>7일 미만 중도상환 시 이용수수료 기본 7일로 계산
+	</p>
+	<h4>자동상환</h4>
+	<p class="c666">
+		렌딩 종료일까지 이용 시 종료일 다음날 00시에 만기상환금액 만큼 사용가능 자산에서 가상자산으로 자동상환<br>렌딩 비율이 92%이상 되면 렌딩 신청 수량의 KRW 가치 만큼 보증금에서 상환
+	</p>
+	<h4>이용수수료</h4>
+	<p class="c666">연 18.25% (일 0.05%)</p>
+	<p>연 18.25% (일 0.05%)</p>
+	<br>
+	<p>이용 예시</p>
+	<table width="100%" border="0">
+	  <tr>
+	    <td align="center" class="fB">비트코인 빌릴 때 시세</td>
+	    <td align="center" class="fB">비트코인 갚을 때 시세</td>
+	    <td align="center" class="fB">신청 수량</td>
+	    <td align="center" class="fB">이용기간</td>
+	    <td align="center" class="fB">이용수수료(1일 0.05%)</td>
+	    <td align="center" class="fB">만기상환 수량</td>
+	  </tr>
+	  <tr>
+	    <td rowspan="4" align="center">10,000,000원</td>
+	    <td rowspan="4" align="center">20,000,000원</td>
+	    <td rowspan="4" align="center">1.0 BTC<br />
+	      ≒<br />
+	    10,000,000원</td>
+	    <td align="center">7일</td>
+	    <td align="center">0.0035 BTC</td>
+	    <td align="center">1.0035 BTC</td>
+	  </tr>
+	  <tr>
+	    <td align="center">15일</td>
+	    <td align="center">0.0075 BTC</td>
+	    <td align="center">1.0075 BTC</td>
+	  </tr>
+	  <tr>
+	    <td align="center">30일</td>
+	    <td align="center">0.0150 BTC</td>
+	    <td align="center">1.0150 BTC</td>
+	  </tr>
+	  <tr>
+	    <td align="center">50일</td>
+	    <td align="center">0.0250 BTC</td>
+	    <td align="center"> 1.0250 BTC</td>
+	  </tr>
+	</table>
+	<h4>추가수수료</h4>
+	<p class="c666">상환 시 상환 수량이 부족해 보증금을 차감해야 하는 경우 차감수량에 대해 0.1% 추가수수료 발생</p>
+	<p>※ 계산식 : ((만기상환금액 / 갚을 때 시세) - 실상환 수량) X 추가수수료(0.1%)</p>
+</div>
+
+<script src="js/fixed.js"></script>	
+<script type="text/javascript" src="js/selectFilter.js"></script>
+<script type="text/javascript">
+		
+		//这里是初始化
+		$('.filter-box').selectFilter({
+			callBack : function (val){
+				//返回选择的值
+				console.log(val+'-是返回的值')
+			}
+		});
+		$('.filter-box1').selectFilter({
+			callBack : function (val){
+				//返回选择的值
+				console.log(val+'-是返回的值')
+			}
+		});
+	</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	/* 滑动/展开 */
+	$(".question li .tit").click(function(){
+												   
+		var arrow = $(this).find("span.arrow");
+	
+		if(arrow.hasClass("up")){
+			arrow.removeClass("up");
+			arrow.addClass("down");
+		}else if(arrow.hasClass("down")){
+			arrow.removeClass("down");
+			arrow.addClass("up");
+		}
+	
+		$(this).parent().find(".info").slideToggle();
+		
+	});
+	
+});
+</script>
+</body>
+</html>
