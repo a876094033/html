@@ -700,17 +700,17 @@
                             "                                            총 모집금액\n" +
                             "                                        </div>\n" +
                             "                                        <div class=\"col-xs-6 col-sm-6 col-md-6 inv-info funding\">\n" +
-                            "                                            <h3>"+ v.amount_limit / 10000 + "<span>만</span>원</h3>\n" +
+                            "                                            <h3>"+ v.amount_capital / 10000 + "<span>만</span>원</h3>\n" +
                             "                                            투자 모집금액\n" +
                             "                                        </div>\n" +
                             "                                    </div>\n" +
                             "                                    <div class=\"progress-ir prn\">\n" +
                             "                                        <div class=\"progress progress-bar-sm\">\n" +
-                            "                                            <div class=\"progress-bar\" role=\"progressbar\" style=\"width: "+Math.floor(v.InvestSum / v.amount)+"%\"\n" +
+                            "                                            <div class=\"progress-bar\" role=\"progressbar\" style=\"width: "+Math.floor(v.amount_limit / v.amount)+"%\"\n" +
                             "                                                aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n" +
                             "                                        </div>\n" +
                             "                                        <div class=\"inven-left\">참여자수: "+  v.InvestCount +"명</div>\n" +
-                            "                                        <div class=\"inven-right\">"+ Math.floor(v.InvestSum / v.amount) +"%</div>\n" +
+                            "                                        <div class=\"inven-right\">"+ Math.floor(v.amount_limit / v.amount*100) +"%</div>\n" +
                             "                                    </div>\n" +
                             "                                    <ul class=\"inline li50 pt15\">\n" +
                             "                                        <li></li>\n" +
@@ -755,17 +755,17 @@
                         "                                                    총 모집금액\n" +
                         "                                                </div>\n" +
                         "                                                <div class=\"col-xs-6 col-sm-6 col-md-6 inv-info funding\">\n" +
-                        "                                                    <h3>"+result.data.list[0].amount_limit/10000+"<span>만</span>원</h3>\n" +
+                        "                                                    <h3>"+result.data.list[0].amount_capital/10000+"<span>만</span>원</h3>\n" +
                         "                                                    투자 모집금액\n" +
                         "                                                </div>\n" +
                         "                                            </div>\n" +
                         "                                            <div class=\"progress-ir prn\">\n" +
                         "                                                <div class=\"progress progress-bar-sm\">\n" +
-                        "                                                    <div class=\"progress-bar\" role=\"progressbar\" style=\"width: "+ Math.floor(result.data.list[0].amount_limit / result.data.list[0].amount) +"%\"\n" +
+                        "                                                    <div class=\"progress-bar\" role=\"progressbar\" style=\"width: "+ Math.floor(result.data.list[0].amount_capital / result.data.list[0].amount) +"%\"\n" +
                         "                                                        aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n" +
                         "                                                </div>\n" +
                         "                                                <div class=\"inven-left\">참여자수: "+  result.data.list[0].InvestCount +"명</div>\n" +
-                        "                                                <div class=\"inven-right\">"+ Math.floor(result.data.list[0].amount_limit / result.data.list[0].amount) +"%</div>\n" +
+                        "                                                <div class=\"inven-right\">"+ Math.floor(result.data.list[0].amount_limit / result.data.list[0].amount*100) +"%</div>\n" +
                         "                                            </div>\n" +
                         "                                            <ul class=\"inline li50 pt15\">\n" +
                         "                                                <li></li>\n" +
@@ -783,7 +783,7 @@
                         // "                                                <div class=\"no2\">중도상환완료</div>\n" +
                        str2+=  "                                            </div>";
                     $("#default").html(str2)
-                    $("#default-img .invest-thumb").css("style", "background: url("+result.data.list[0].borrow_img.split(",")[0]+" no-repeat center bottom;")
+                    $("#default-img >div").css("style", "background: url("+result.data.list[0].borrow_img.split(",")[0]+" no-repeat center bottom;")
                     $(".edge").attr("href", "detail.html?id="+result.data.list[0].id)
                     var all_page = Math.ceil(result.data.total/4);
                     var page_str = "";
