@@ -782,7 +782,7 @@
                         // "                                                <div class=\"no2\">중도상환완료</div>\n" +
                        str2+=  "                                            </div>";
                     $("#default").html(str2)
-                    $("#default-img >div").attr("style", "background: url("+result.data.list[0].borrow_img.split(",")[0]+" no-repeat center bottom;")
+                    $("#default-img >div").attr("style", "background: url("+IMG_URL+result.data.list[0].borrow_img.split(",")[0]+") no-repeat center bottom;")
                     $(".edge").attr("href", "detail.html?id="+result.data.list[0].id)
                     var all_page = Math.ceil(result.data.total/4);
                     var page_str = "";
