@@ -2519,7 +2519,7 @@ ul.navbar-nav > li > a > .badge.badge-primary {
 }
 .meta-info li.profit {
 	font-size:1.6em;
-	color:#000;
+	color:#000000;
 }
 .meta-info li:first-child {
 	padding-left:0;
@@ -3026,7 +3026,7 @@ article .post .post-text {
 .invest-item .invest-content label {
 	font-size:14px;
 	font-weight:400;
-	color:#000;
+	color:#000000;
 }
 .invest-item .invest-content h1 {
 	min-height: 40px;
@@ -3038,11 +3038,11 @@ article .post .post-text {
 }
 .invest-item .invest-content .meta-info {
 	font-weight:400;
-	color:#000;
+	color:#000000;
 }
 .invest-item .invest-content .inv-info {
 	font-size:0.8em;
-	color:#000;
+	color:#000000;
 }
 .invest-item .invest-content .inv-info h3{
 	font-size:1.5em;
@@ -3144,7 +3144,7 @@ article .post .post-text {
 	padding:0 10px;
 }
 .cate-list li.active a {
-	color:#000;
+	color:#000000;
 	text-decoration:underline;
 }
 label.detail-page {
@@ -4173,9 +4173,9 @@ table th {
 table th, table td {
 	text-align: center;
 }
-.table-striped > tbody > tr:nth-of-type(2n+1) {
-	background: #f6faff !important;
-}
+/*.table-striped > tbody > tr:nth-of-type(2n+1) {*/
+/*	background: #eee !important;*/
+/*}*/
 .money-pre {
     position:relative;
 }
@@ -6946,4 +6946,8 @@ body#home .icon-col-03 {
     font-size: 16px;
   }
 }
-*
+
+ */
+table {
+    border-color: #fff !important;
+}
