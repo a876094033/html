@@ -722,16 +722,16 @@
             if (result.code == 200) {
                 $(".profile_info >h2").html(result.data.name)
                 var str = "<div class=\"col-md-2 col-sm-4 col-xs-6 tile_stats_count\">\n" +
-                    "           <span class=\"count_top\"><i class=\"fa fa-user\"></i> 이번달 상환액</span>\n" +
-                    "           <div class=\"count\">" + result.data.AmountUsed + "원</div>\n" +
+                    "           <span class=\"count_top\"><i class=\"fa fa-user\"></i> 총 투자 금액</span>\n" +
+                    "           <div class=\"count\">" + result.data.Amount-result.data.AmountUsed + "원</div>\n" +
                     "      </div>";
                 str += "<div class=\"col-md-2 col-sm-4 col-xs-6 tile_stats_count\">\n" +
-                    "        <span class=\"count_top\"><i class=\"fa fa-user\"></i> 나의 예치금</span>\n" +
+                    "        <span class=\"count_top\"><i class=\"fa fa-user\"></i> 사용 가능한 잔액</span>\n" +
                     "        <div class=\"count\">" + result.data.AmountUsed + "원</div>\n" +
                     "   </div>";
                 str += "<div class=\"col-md-2 col-sm-4 col-xs-6 tile_stats_count\">\n" +
-                    "        <span class=\"count_top\"><i class=\"fa fa-user\"></i> 삼성 론 코인</span>\n" +
-                    "        <div class=\"count\">" + result.data.AmountUsed + "원</div>\n" +
+                    "        <span class=\"count_top\"><i class=\"fa fa-user\"></i> 회수 할 금액</span>\n" +
+                    "        <div class=\"count\">" + result.data.InvestSum + "원</div>\n" +
                     "   </div>";
                 str += "<div class=\"col-md-2 col-sm-4 col-xs-6 tile_stats_count\">\n" +
                     "        <span class=\"count_top\"><i class=\"fa fa-user\"></i> 상환완료</span>\n" +

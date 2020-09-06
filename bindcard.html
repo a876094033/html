@@ -160,28 +160,78 @@
         <h3 class="text-center mh20">实名认证</h3>
         <form name="frmJoin" id="frmJoin" method="post" autocomplete="off">
           <div class="inner-addon">
-            <input class="form-control" type="text" required placeholder="请输入姓名" />
+            <input class="form-control" type="text" id="username" required placeholder="请输入姓名" />
           </div>
           <div class="inner-addon">
-            <input style="display: inline-block;width: 60%;" type="number" class="form-control" maxlength="100"
+            <input style="display: inline-block;width: 60%;" id="first_num" type="number" class="form-control" maxlength="100"
               placeholder="请输入身份证号码前面的" required="" autofocus="">
               -
-            <input style="display: inline-block;width: 30%;" type="number" class="form-control" maxlength="100"
+            <input style="display: inline-block;width: 30%;" id="last_num" type="number" class="form-control" maxlength="100"
               placeholder="请输入身份证号码后面的" required="" autofocus="">
           </div>
           <div class="inner-addon">
-            <select class="form-control" placeholder="请选择银行">
+            <select class="form-control" id="bank" placeholder="请选择银行">
               <option>请选择银行</option>
-              <option>工商银行</option>
-              <option>招商银行</option>
+              <option value="(구)조흥은행">(구)조흥은행</option>
+              <option value="HMC투자증권">HMC투자증권</option>
+              <option value="HSBC">HSBC</option>
+              <option value="KEB하나은행">KEB하나은행</option>
+              <option value="NH투자증권">NH투자증권</option>
+              <option value="SC제일은행">SC제일은행</option>
+              <option value="경남은행">경남은행</option>
+              <option value="광주은행">광주은행</option>
+              <option value="교보증권">교보증권</option>
+              <option value="국민은행">국민은행</option>
+              <option value="기술신용보증기금">기술신용보증기금</option>
+              <option value="기업은행">기업은행</option>
+              <option value="농축협조합(지역농협)">농축협조합(지역농협)</option>
+              <option value="농협농협은행(중앙회)">농협농협은행(중앙회)</option>
+              <option value="대구은행">대구은행</option>
+              <option value="대신증권">대신증권</option>
+              <option value="대우증권">대우증권</option>
+              <option value="동부증권">동부증권</option>
+              <option value="메리츠종합금융증권">메리츠종합금융증권</option>
+              <option value="미래에셋증권">미래에셋증권</option>
+              <option value="부국증권">부국증권</option>
+              <option value="부산은행">부산은행</option>
+              <option value="산림조합중앙회">산림조합중앙회</option>
+              <option value="산업은행">산업은행</option>
+              <option value="삼성증권">삼성증권</option>
+              <option value="상호저축은행">상호저축은행</option>
+              <option value="새마을금고">새마을금고</option>
+              <option value="수출입">수출입</option>
+              <option value="수협">수협</option>
+              <option value="신영증권">신영증권</option>
+              <option value="신한금융투자">신한금융투자</option>
+              <option value="신한은행">신한은행</option>
+              <option value="신협">신협</option>
+              <option value="아이엠투자증권">아이엠투자증권</option>
+              <option value="에스케이증권">에스케이증권</option>
+              <option value="엘아이지투자증권">엘아이지투자증권</option>
+              <option value="외환은행">외환은행</option>
+              <option value="우리은행">우리은행</option>
+              <option value="우체국">우체국</option>
+              <option value="유안타증권">유안타증권</option>
+              <option value="유진투자증권">유진투자증권</option>
+              <option value="이베스트투자증권">이베스트투자증권</option>
+              <option value="전북은행">전북은행</option>
+              <option value="제주은행">제주은행</option>
+              <option value="카카오뱅크">카카오뱅크</option>
+              <option value="케이뱅크은행">케이뱅크은행</option>
+              <option value="키움증권">키움증권</option>
+              <option value="하이투자증권">하이투자증권</option>
+              <option value="한국씨티은행">한국씨티은행</option>
+              <option value="한국투자증권">한국투자증권</option>
+              <option value="한화투자증권">한화투자증권</option>
+              <option value="현대증권">현대증권</option>
             </select>
           </div>
           <div class="inner-addon">
-            <input type="number" class="form-control" maxlength="100"
+            <input type="number" class="form-control" id="bank_num" maxlength="100"
               placeholder="请输入银行卡号" required="" autofocus="">
           </div>
           <div class="inner-addon">
-            <input type="number" class="form-control" maxlength="11"
+            <input type="number" class="form-control" id="phone" maxlength="11"
               placeholder="请输入银行预留手机号码" required="" autofocus="">
           </div>
           <div class="inner-addon">
@@ -341,7 +391,37 @@
   <script type="text/javascript" src="/static/util.js"></script>
   <script>
     $(function () {
+		var token = sessionStorage.getItem("token");
+		if (!token) {
+			window.location.href="/login.html";
+		}
+		var settings = {
+		    "url": "/api/v1/member?token="+token,
+		    "method": "POST",
+		    "timeout": 0,
+		};
+		
+		$.ajax(settings).done(function (result) {
+			$("#username").val(result.data.RealName);
+			$("#first_num").val(result.data.FirstCardNum);
+			$("#last_num").val(result.data.LastCardNum);
+			$("#bank_num").val(result.data.BankName);
+			$("#phone").val(result.data.Phone);
+			$("#bank").each(function(){
+				if($(this).val()==result.data.Bank){
+					$(this).attr("selected", true);
+				}
+			});
+		});
       $('#sendSmsBtn').click(function () {
+		  var setting = {
+		      "url": "/api/v1/sendsms?token="+token+"&phone="+$("#phone").val(),
+		      "method": "POST",
+		      "timeout": 0,
+		  };
+		  $.ajax(setting).done(function (result) {
+			  
+			}
         var $this = $(this);
         var time = 60;
         var next = 's';
